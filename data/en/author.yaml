@@ -10,11 +10,9 @@ contactInfo:
   telegram:
     icon: telegram
     url: "https://telegram.me/mmzeynalli"
-    text: "Miradil Zeynalli"
-  linkedin:
-    icon: linkedin
-    url: "https://www.linkedin.com/in/miradil-zeynalli/"
-    text: "Miradil Zeynalli"
+    text: "@mmzeynalli"
+  linkedin: miradil-zeynalli
+  github: mmzeynalli
   stack-overflow:
     icon: stack-overflow
     url: "https://stackoverflow.com/users/8842262/miradil-zeynalli"
