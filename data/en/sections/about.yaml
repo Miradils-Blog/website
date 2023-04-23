@@ -57,7 +57,7 @@ softSkills:
     color: blue
   - name: Public Speaking
     percentage: 95
-    color: yellow
+    color: "#ff0000"
   - name: Adaptibility
     percentage: 100
     color: green

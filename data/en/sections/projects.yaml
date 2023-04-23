@@ -21,28 +21,44 @@ buttons:
 
 # your projects
 projects:
-  - name: Kubernetes
-    # logo: /images/sections/projects/kubernetes.png
+  - name: 5-stage RISC-V processor
+    logo: /images/sections/projects/riscv.png
     role: Contributor
-    timeline: "March 2018 - Present"
-    repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
-    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-    summary: Production-Grade Container Scheduling and Management.
-    tags: ["professional", "kubernetes", "cloud"]
+    timeline: "Mar 2023 - Present"
+    repo: https://github.com/mmzeynalli/RISC-V
+    summary: A simple 32-bit 5-stage RISC-V processor in SystemVerilog based on the book Computer Organization and Design by Patterson & Hennesy.
+    tags: ["academic", "riscv", "systemverilog"]
 
-  - name: Tensorflow
-    # logo: /images/sections/projects/tensorflow.png
+  - name: Kibrit 3G
     role: Developer
-    timeline: "Jun 2018 - Present"
-    repo: https://github.com/tensorflow/tensorflow
-    #url: ""
-    summary: An Open Source Machine Learning Framework for Everyone.
-    tags: ["professional", "machine-learning", "academic"]
+    timeline: "Mar 2020 - May 2021"
+    summary:
+      Star network of low-power MCUs connected to host gateway via LoRaWAN.
+      Gateway is connected to 3G network with SIM5300E 3G module
+    tags: ["professional", "sim", "3G", "stm32", "lora"]
 
-  - name: Toha
-    # logo: /images/sections/projects/toha.png
+  - name: Smart LED Display v2
+    logo: /images/sections/projects/customs.png
+    role: Developer
+    timeline: "Mar - Aug 2020"
+    summary:
+      Extension of control for P10 displays using BeagleBone Black. Also comes with Java Desktop software
+      to generate new fonts if needed, for Azerbaijani alpahabet
+    tags: ["professional", "beagleboneblack", "bbb", "atmega", "led", "java"]
+
+  - name: AQI
+    logo: /images/sections/projects/bna.png
+    role: Lead
+    timeline: "Oct 2019 - Feb 2020"
+    summary:
+      A device to detect air quality index by 14 factors (noise, dust, co2 level etc.)
+      for Baku Transportation Agency
+    tags: ["professional", "aqi", "stm32", "hpma115s0"]
+
+  - name: Optioptiboot
+    repo: https://github.com/mmzeynalli/optioptiboot
     role: Owner
-    timeline: "Jun 2019 - Present"
-    repo: https://github.com/hossainemruz/toha
-    summary: A Hugo theme for personal portfolio.
-    tags: ["hobby", "hugo", "theme", "professional"]
+    timeline: "Oct 2020 - Halted"
+    summary: Optimized version of optiboot, to suppport external flashing,
+      enabling OTA update for any communication mean.
+    tags: ["hobby", "atmega", "bootloader"]

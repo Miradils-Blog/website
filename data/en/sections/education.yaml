@@ -37,5 +37,5 @@ degrees:
       url: "https://www.ku.edu.tr/en/"
     grade:
       scale: CGPA
-      achieved: 3.8
+      achieved: 3.89
       outOf: 4

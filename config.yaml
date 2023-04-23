@@ -60,7 +60,7 @@ params:
       enable: true
       services:
         darkreader:
-          defaultColorScheme: system # options are 'system', 'dark', 'light'
+          defaultColorScheme: dark # options are 'system', 'dark', 'light'
           fixes:
             invert: ['img[src$=".svg"]'] # inverts svg colors.
           theme:
