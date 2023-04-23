@@ -12,14 +12,34 @@ section:
 # Give a summary of you each skill in the summary section.
 skills:
   - name: C
-    logo: "/images/sections/skills/c.png"
-    summary: "Using as the main language for professional development. Capable of writing scalable, testable, and maintainable programs."
+    # logo: "/images/sections/skills/c.png"
+    summary: "Using as the main language for professional development. Capable of writing maintainable, scalable and testable programs."
+
+  - name: Bare-metal development
+    summary:
+      "Mainly worked with general purpose microcontrollers/microcomputers.
+      Developed C/C++ firmware for: STM32, ATmega and Python and bash scripts for RaspberryPi and BeagleBone Black.  \n
+      Worked with: U(S)ART, I2C, SPI, SDIO, FreeRTOS, OTA, Power management, BLE, HAL, Debian, TCP, MQTT"
+
+  - name: Python
+    # logo: /images/sections/skills/py.png
+    summary:
+      "Using as secondary main language, both for professional and personal purposes.
+      Capable of writing large-scale programs with unit tests.  \n
+      Working mostly with frameworks: Django, DRF, unittest and pytest, Celery, FastAPI, Pandas, Numpy, Matplotlib, Scikit-learn"
+    url: "https://python.org/"
+
+  - name: ASIC Development
+    summary:
+      "Right now focusing on learning HDLs (mainly VHDL and SystemVerilog), mainly at university, but also by myself.
+      Have done small-scale full ASIC workflow, from ASMD and block diagram design till PnR."
+
+  - name: PostgreSQL
+    # logo: "/images/sections/skills/c.png"
+    summary: "Took course back at bachelors', later improved myself at it while being backend developer, and trying to optimize queries."
+    url: "https://postgresql.org/"
 
   - name: Docker
-    logo: "/images/sections/skills/c.png"
-    summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
-    url: "https://kubernetes.io/"
-
-  - name: Cloud Computing
     # logo: "/images/sections/skills/cloud.png"
-    summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
+    summary: "Well, using it for its purpose, I guess..."
+    url: "https://docker.com/"

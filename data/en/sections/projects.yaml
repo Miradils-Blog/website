@@ -53,7 +53,8 @@ projects:
     summary:
       A device to detect air quality index by 14 factors (noise, dust, co2 level etc.)
       for Baku Transportation Agency
-    tags: ["professional", "aqi", "stm32", "hpma115s0"]
+    tags:
+      ["professional", "hpma115s0", "qmc5883l", "dht22", "stm32", "air-quality"]
 
   - name: Optioptiboot
     repo: https://github.com/mmzeynalli/optioptiboot

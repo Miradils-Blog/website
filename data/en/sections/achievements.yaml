@@ -3,22 +3,25 @@ section:
   name: Achievements
   id: achievements
   enable: true
-  weight: 7
+  weight: 9
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
 # Your achievements achievements
 achievements:
-  - title: Best Presenter
-    # image: /images/sections/achievements/presenter.jpg
-    summary: Best presenter in the 2020 XYZ conference.
-  - title: Champion
-    # image: /images/sections/achievements/sport.jpg
-    summary: Champion in cycling inter-city cycling championship 2020.
-  - title: Graduation
-    # image: /images/sections/achievements/graduation-cap.jpg
-    summary: Received Bachelor of Science (B.Sc.) in Computer Science and Engineer from XYZ University.
-  - title: Award Winner
-    # image: /images/sections/achievements/woman-winner.jpg
-    summary: Wined best paper award at IEE Conference 2020.
+  - title: CanSat Winners
+    image: /images/sections/achievements/cansat.png
+    summary: Winner in CanSat Azerbaijan 2019 competetion (team CanADA, year 2019)
+    url: "https://cansat.space.az/teams"
+  - title: Hackhathon - 2nd place
+    image: /images/sections/achievements/aquahack.png
+    summary: 2nd place award in AquaHack (team AquaHakermaks)
+    url: "https://aquahack.hackathon.az/news/2020/ekologiya-ve-tebii-servetler-nazirliyi-ve-bmt-nin-inkisaf-proqraminin-suya-qenaet-movzusunda-kecirdiyi-hackathonun-qalibleri-melum-oldu"
+  - title: World Champion
+    image: /images/sections/achievements/chess.png
+    summary: Won a gold medal in Thessaloniki, Greece, in World School Chess Championship, 2013.
+    url: "https://chess-results.com/tnr95778.aspx?lan=1&art=1"
+  - title: 2nd Degree Diploma
+    image: /images/sections/achievements/acm.png
+    summary: Got awarded in ACM Sub-Regionals (Georgia, 2018)
