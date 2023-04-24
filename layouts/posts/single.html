@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+        <article>
+                <header>
+                        <h1>{{ .Title }}</h1>
+                </header>
+                {{ partial "series.html" . }}
+                {{ .Content }}
+                {{ partial "series.html" . }}
+        </article>
+</main>
+{{ end }}

@@ -11,12 +11,12 @@ section:
 # Your accomplishments
 accomplishments:
   - name: Qiskit Summer Schools
-    timeline: "Jun 2020"
+    timeline: "Jul 2020"
     organization:
       name: IBM
       url: https://www.ibm.com/us-en/
     courseOverview: This intense two-week bootcamp was to give us deep insight about quantum computing and hardware
-    certificateURL: "https://drive.google.com/drive/folders/1vfqEh_86Y09phcLCFh14TMnQ2rS05Hsc?usp=sharing"
+    certificateURL: "https://drive.google.com/drive/folders/1vfqEh_86Y09phcLCFh14TMnQ2rS05Hsc"
     url: https://qiskit.org/learn/summer-school/introduction-to-quantum-computing-and-quantum-hardware-2020/
 
   - name: Microsoft Azure Machine Learning
@@ -33,12 +33,4 @@ accomplishments:
       name: FIDE
       url: https://fide.com
     courseOverview: International Title from FIDE
-    certificateURL: "https://example.com"
-
-  - name: Mastering Multithreading Programming with Go (Golang)
-    timeline: "Nov 2017 - Mar 2018"
-    organization:
-      name: Udemy
-      url: https://www.udemy.com
-    courseOverview: Discover how to create responsive and high performance software. Develop programs with Golang that are highly Concurrent and Parallel. Improve your programming skills in Go with more advanced, mulithreading topics.
-    certificateURL: "https://example.com"
+    certificateURL: "https://drive.google.com/drive/folders/1vfqEh_86Y09phcLCFh14TMnQ2rS05Hsc"
