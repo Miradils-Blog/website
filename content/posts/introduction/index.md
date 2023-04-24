@@ -1,18 +1,14 @@
 ---
 title: "Introduction"
-date: 2020-06-08T08:06:25+06:00
-description: Introduction to Sample Post
+date: 2023-04-24T10:00:00+02:00
+description: Introduction
 menu:
   sidebar:
     name: Introduction
     identifier: introduction
     weight: 10
-tags: ["Basic", "Multi-lingual"]
+tags: ["Basic"]
 categories: ["Basic"]
 ---
 
-Greeting! This is an introduction post. This post tests the followings:
-
-- Hero image is in the same directory as the post.
-- This post should be at top of the sidebar.
-- Post author should be the same as specified in `author.yaml` file.
+Greetings! I am Miradil Zeynalli, an engineer/developer/tech enthusiast slash, slash slash... I am here to share my findings and experiences from tech world with all of you interested. I will also share my international experience in Lund University. Make sure to follow me!
