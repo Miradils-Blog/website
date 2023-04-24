@@ -7,7 +7,7 @@ menu:
     name: Introduction
     identifier: introduction
     weight: 10
-tags: ["Basic"]
+tags: ["Basic", "Intro"]
 categories: ["Basic"]
 ---
 

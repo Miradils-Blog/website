@@ -262,7 +262,3 @@ params:
     #   enable: true
     #   provider: mailchimp
     #   mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
-
-    # Show/hide disclaimer notice in the footer. Default is "false".
-    # disclaimer:
-    #   enable: true

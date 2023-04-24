@@ -131,3 +131,4 @@ dist
 
 # User defined
 resources/
+.vscode/
