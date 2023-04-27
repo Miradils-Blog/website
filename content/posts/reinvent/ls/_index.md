@@ -1,5 +1,5 @@
 ---
-title: Let's Rerite Linux `ls` command
+title: Let's Rewrite Linux 'ls' command
 menu:
   sidebar:
     name: "Linux command: `ls`"
