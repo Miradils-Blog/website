@@ -1,14 +1,14 @@
 ---
-title: "Introduction"
-date: 2023-04-24T10:00:00+02:00
-description: Introduction
+title: "Flags"
+date: 2023-04-25T10:00:00+02:00
+description: ls_part2
 menu:
   sidebar:
-    name: ls2
-    identifier: ls2
+    name: "Flags"
+    identifier: ls_part2
     parent: ls
     weight: 10
-tags: ["Basic", "Intro"]
+tags: ["C", "Linux", "Shell"]
 categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
 ---

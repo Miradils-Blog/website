@@ -1,5 +1,5 @@
 ---
-title: Let's Write source code for `ls`
+title: Let's Rerite Linux `ls` command
 menu:
   sidebar:
     name: "Linux command: `ls`"

@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="title">
-                    <h1>{{ .Page.Title }}</h1>
+                    <h1>{{ .Parent.Title }}: {{.Page.Title}}</h1>
                 </div>
                 {{ if site.Params.features.tags.enable }}
                 <div class="taxonomy-terms">

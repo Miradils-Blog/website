@@ -1,11 +1,11 @@
 ---
-title: "Introduction"
+title: "About command"
 date: 2023-04-24T10:00:00+02:00
-description: Introduction
+description: ls_part1
 menu:
   sidebar:
-    name: ls1
-    identifier: ls1
+    name: "About command"
+    identifier: ls_part1
     parent: ls
     weight: 10
 tags: ["C", "Linux", "Shell"]
