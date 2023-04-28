@@ -5,7 +5,11 @@
                 <img class="card-img-top" src='{{ partial "helpers/get-hero.html" . }}' alt="Hero Image">
             </div>
             <div class="card-body">
+                {{ if .Params.series }}
                 <h5 class="card-title">{{ .Parent.Title }}: {{ .Title }}</h5>
+                {{ else }}
+                <h5 class="card-title"> {{ .Title }} </h5>
+                {{ end }}
                 <p class="card-text post-summary">{{ .Summary }}</p>
             </div>
             <div class="card-footer">

@@ -1,7 +1,7 @@
 ---
 title: "Command, file types and flags"
 date: 2023-04-28T19:00:00+02:00
-description: ls_part1
+description: "Command, file types and flags"
 menu:
   sidebar:
     name: "Command, file types and flags"
