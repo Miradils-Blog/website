@@ -30,9 +30,9 @@ There are 8 main types of files in Linux:
 
 1. Regular files: Any file with no special "powers" are considered regular file. These files include text, image, video etc. files. Color code: **None**
 2. Executable files: Files that can be executed/run. Color code: **Green**
-3. Directory files: Practically folders. They store the location of other files. Color code: **Blue** (**Red + Black Background** if link is broken)
+3. Directory files: Practically folders. They store the location of other files. Color code: **Blue** 
 4. Block or Character special files: Hardware devices (hard, CD/DVD drives) are stored in Linux as special files. Color code: **Yellow + Black background**
-5. Link Files: Files pointing to other files. Basically, shortcuts. Color code: **Cyan/Sky Blue**
+5. Link Files: Files pointing to other files. Basically, shortcuts. Color code: **Cyan/Sky Blue** (**Red + Black Background** if link is broken)
 6. Socket files: Communication endpoint for applications. Two application can share data via socket files with each other. Color code: **Magenta** 
 7. Named pipe files: Also used for communication between applications. Difference is that socket communication is bidirectional, unlike pipe files. Also, pipes can be created between related processses (for ex. parent and child processes), however, there is no limitation for sockets. Color code: **Light Yellow + Black Background**
 8. Archive files: Basically compressed/archived files. Color code: **Red**
