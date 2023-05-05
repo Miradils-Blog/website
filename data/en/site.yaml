@@ -26,4 +26,4 @@ openGraph:
   type: website
   description: Portfolio and personal blog of Miradil Zeynalli.
   image: images/author/profile.jpg
-  url: https://mmzeynalli.github.io
+  url: https://mmzeynalli.netlify.app

@@ -11,6 +11,10 @@ contactInfo:
     icon: telegram
     url: "https://telegram.me/mmzeynalli"
     text: "@mmzeynalli"
+  medium: 
+    icon: medium
+    url: https://medium.com/@mmzeynalli
+    text: "@mmzeynalli" 
   linkedin: miradil-zeynalli
   github: mmzeynalli
   stack-overflow:

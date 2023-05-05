@@ -1,4 +1,4 @@
-baseURL: https://mmzeynalli.github.io
+baseURL: https://mmzeynalli.netlify.app
 
 languageCode: en-us
 title: "Miradil's Blog"
@@ -45,7 +45,7 @@ params:
   # favicon: /images/site/favicon.png
 
   # GitHub repo of your site
-  gitRepo: https://github.com/mmzeynalli/mmzeynalli.github.io
+  gitRepo: https://github.com/Miradils-Blog/website
   # Default branch of your Git repo
   gitBranch: main
 
