@@ -114,7 +114,7 @@ We also need to add test rule to `Makefile`:
 
 ```Makefile
 runtest:
-	$(CC) $(CFLAGS) -o test.o output.c ./unity/src/unity.c
+	$(CC) $(CFLAGS) -o test.o test/output.c ./unity/src/unity.c
 	./test.o
 ```
 
