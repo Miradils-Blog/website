@@ -13,9 +13,9 @@ categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
 ---
 
-**In this article we will start the first steps to rewrite `ls` command. If you want to know more about command, please read Part 1.**
-
-**Source codes can be found at: https://github.com/Miradils-Blog/linux-ls**
+> **In this article we will start the first steps to rewrite `ls` command. If you want to know more about command, please read Part 1.**
+>
+> **Note:** Source codes can be found at: https://github.com/Miradils-Blog/linux-ls
 
 ## The easy way
 Actually, C provides a function to run any OS command, and print its output: [system](https://www.tutorialspoint.com/c_standard_library/c_function_system.htm). From the example in the reference, we see that, we can just take arguments from shell and pass it to that function, and it is done. 
