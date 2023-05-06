@@ -8,7 +8,7 @@ menu:
     identifier: ls_part1
     parent: ls
     weight: 10
-tags: ["C", "Linux", "Shell"]
+tags: ["C", "Linux", "Shell", "File System"]
 categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
 ---
@@ -17,30 +17,30 @@ series: ["LS"]
 > **Note:** For the whole series, Zsh is used, for which, output can be different compared other shell profiles.
 
 ## Introduction
-The `ls` command is one of the most commonly used commands in Linux/UNIX. This command is used to list the contents of a directory. Without any flags, we have the following output:
 
+The `ls` command is one of the most commonly used commands in Linux/UNIX. This command is used to list the contents of a directory. Without any flags, we have the following output:
 
 ![Output of 'ls'](ls_output.png)
 
 What are these colorful file names? Well, let's find out!
 
-
 ## File Types
+
 There are 8 main types of files in Linux:
 
 1. Regular files: Any file with no special "powers" are considered regular file. These files include text, image, video etc. files. Color code: **None**
 2. Executable files: Files that can be executed/run. Color code: **Green**
-3. Directory files: Practically folders. They store the location of other files. Color code: **Blue** 
+3. Directory files: Practically folders. They store the location of other files. Color code: **Blue**
 4. Block or Character special files: Hardware devices (hard, CD/DVD drives) are stored in Linux as special files. Color code: **Yellow + Black background**
 5. Link Files: Files pointing to other files. Basically, shortcuts. Color code: **Cyan/Sky Blue** (**Red + Black Background** if link is broken)
-6. Socket files: Communication endpoint for applications. Two application can share data via socket files with each other. Color code: **Magenta** 
+6. Socket files: Communication endpoint for applications. Two application can share data via socket files with each other. Color code: **Magenta**
 7. Named pipe files: Also used for communication between applications. Difference is that socket communication is bidirectional, unlike pipe files. Also, pipes can be created between related processses (for ex. parent and child processes), however, there is no limitation for sockets. Color code: **Light Yellow + Black Background**
 8. Archive files: Basically compressed/archived files. Color code: **Red**
 
 There are more of course, but we will not dive into that. For more info, you can check [this answer](https://askubuntu.com/a/884513).
 
-
 ## Flags
+
 Now that we know which file types we have, let's dig into command `ls` more. According to the [manual](https://man7.org/linux/man-pages/man1/ls.1.html), there are many flags for the command. The most used ones and the ones that we will rewrite are:
 
 1. **-a:** Show hidden entries (a.k.a. files starting with '.')
@@ -71,4 +71,4 @@ Now that we know which file types we have, let's dig into command `ls` more. Acc
 
 ## What is the plan?
 
-We will rewrite `ls` command and its above mentioned flags step-by-step, in C. We will deep-dive into Linux filesystem, permissions, users/groups etc. Moreover, we will use Test Driven Development and modular programming to ensure we write the most optimal code. To be honest, I am thrilled with this project and I hope you are too! 
+We will rewrite `ls` command and its above mentioned flags step-by-step, in C. We will deep-dive into Linux filesystem, permissions, users/groups etc. Moreover, we will use Test Driven Development and modular programming to ensure we write the most optimal code. To be honest, I am thrilled with this project and I hope you are too!
