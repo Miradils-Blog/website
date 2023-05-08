@@ -145,19 +145,19 @@ params:
     #   siteId: 1 # Or any other number
 
     # Enable Support
-    # support:
-    #   enable: false
-    #   services:
+    support:
+      enable: false
+      services:
     #     kofi:
     #       user: hossainemruz
     #       text: Tip Me
     #       textColor: "#f9fafc"
     #       backgroundColor: "#248aaa"
-        # buymeacoffee:
-        #   user: <your buymeacoffee.com user>
-        #   text: Support me on Buy me a coffee!
-        #   info: Buy me a coffee!
-        #   color: '#FFDD00'
+        buymeacoffee:
+          user: mmzeynalli
+          text: Buy me coffee to boost my writing!
+          info: Buy me a coffee!
+          color: '#FFDD00'
 
     # specify whether you want to show Table of Contents in reading page
     toc:
