@@ -7,7 +7,7 @@ menu:
     name: "Starting with C"
     identifier: ls_part2
     parent: ls
-    weight: 10
+    weight: 20
 tags: ["C", "Linux", "Shell", "File System"]
 categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
