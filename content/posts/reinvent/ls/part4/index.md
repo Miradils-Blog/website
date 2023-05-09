@@ -228,4 +228,4 @@ void parse_flags(char *flags[], int count, options_t *options)
 
 ```
 
-Now, that's way more like it! 
+Now, that's way more like it!

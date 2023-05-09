@@ -58,7 +58,6 @@ The output would be:
 
 Okay, cool, we got the names of files. However, we need more than that. The flag `-lasi` requires all the data about every file in folder. For each normal and hidden file (`.` and `..` included) we need the following data:
 
-
 | I-node    | Block Size | Permissions | Link Count |  Owner   | Owner Group | File size | Modification Time |   Name    |
 | --------- | :--------: | :---------: | :--------: | :------: | :---------: | :-------: | :---------------: | :-------: |
 | 268703300 |     0      | drwxr-xr-x  |     3      | miradilz |   axusers   |    174    |   May  5 10:04    |  folder   |
@@ -75,9 +74,10 @@ Okay, cool, we got the names of files. However, we need more than that. The flag
 {{< vs 1 >}}
 
 What are these data?
+
 - **i-node**: Short for "index node". It is a file data structure storing every data (file size and type, UID and GUID of owner, permissions, last modification/access/change timestamps) except its name and content.
 - **block size**: The number of blocks the file takes. 1 block is usually 512B, and it is the multiple of 4 (in my case).
-- **permissions**: The first character is file type: `-` for normal file, `d` for directory, `b` for block, `c` for character, `p` for pipe, `l` for link and `s` for socket. The rest can be summarized with an image: 
+- **permissions**: The first character is file type: `-` for normal file, `d` for directory, `b` for block, `c` for character, `p` for pipe, `l` for link and `s` for socket. The rest can be summarized with an image:
 
 {{< img src="rwx_permissions.png" align="center" title="File permissions" >}}
 {{< vs 1 >}}
@@ -90,9 +90,11 @@ What are these data?
 - **name**: Name of the file
 
 ## Collecting all the necessary info
+
 To easily access every attribute of file, let's use a struct. But, wait! C already has a [`struct stat`](https://man7.org/linux/man-pages/man2/lstat.2.html) which stores almost all needed information (we miss user name, group name, color etc.). Of course, we have to write functions to handle missing data. We can use those functions when needed (maybe when it is already print time), or we create another struct and fill it beforehand with everything. I preffer going with latter, as it is easier to handle everything. Let's create another identical struct with extra data......
 
 ### WAIT, YOU CAN EXTEND STRUCTS?
+
 Yep, I am shocked as well. I found this at time writing this post, when this question suddenly struck me. After googling (and coming across this [answer](https://stackoverflow.com/a/14523823/8842262)), I found out that with gcc flag `-fms-extensions` one can indeed extend a struct. So, we have the following code:
 
 ```c
@@ -186,7 +188,8 @@ void get_groupname_from_gid(int gid, char *groupname)
 ```
 
 #### Permission String
-Unfortunately, for this, we do not have a ready function. Thus, we need to analyze every permission bit ourselves and construct a string. At least for this, C does provide needed functions: 
+
+Unfortunately, for this, we do not have a ready function. Thus, we need to analyze every permission bit ourselves and construct a string. At least for this, C does provide needed functions:
 
 ```c
 void construct_permission_str(mode_t mode, char *permission)
@@ -214,6 +217,7 @@ void construct_permission_str(mode_t mode, char *permission)
     permission[10] = 0;  // terminator char, just in case
 }
 ```
+
 #### Parse extension of file
 
 This one is quite straightforward:
@@ -229,7 +233,6 @@ void get_file_extension(char *file_name, char *extension)
 ```
 
 `strchr` is function which finds first occurance of given character and points there (NULL otherwise). `strrchr` is the same function, but reversed, meaning it shows the last occurance of given character. And for us, the last part, after dot is considered an extension.
-
 
 #### Color and indicator
 
@@ -306,8 +309,8 @@ char get_indicator(char* permission)
 
 `is_archive_file` is just function checking if the extension corresponds to archive file or not. What are these weird color values? Those are MAGIC! With super useful [ASCII escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Examples) we can format and color our output. I got the exact values for those constants with `dircolors -p` command.
 
-
 ## Collecting everthing together
+
 So, now we have everything ready as separate parts and functions, let's join them and get full array of file info:
 
 ```c
@@ -370,8 +373,9 @@ Guess the output?
 ![Original ls output](original_ls.png)
 
 VOILA! Almost perfect output :) Of course, we are missing some data:
-- First and foremost, the formatting. The original `ls` is way more compact, as they do not use tabs, instead adjusts every column by its most wide line. 
-- The order of files in output is different. 
+
+- First and foremost, the formatting. The original `ls` is way more compact, as they do not use tabs, instead adjusts every column by its most wide line.
+- The order of files in output is different.
 - For char and block files, instead of size, device numbers should be shown.
 - For soft links, their reference files should be shown.
 
