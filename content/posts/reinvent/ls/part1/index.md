@@ -34,7 +34,7 @@ There are 8 main types of files in Linux:
 4. Block or Character special files: Hardware devices (hard, CD/DVD drives) are stored in Linux as special files. Color code: **Yellow + Black background**
 5. Link Files: Files pointing to other files. Basically, shortcuts. Color code: **Cyan/Sky Blue** (**Red + Black Background** if link is broken)
 6. Socket files: Communication endpoint for applications. Two application can share data via socket files with each other. Color code: **Magenta**
-7. Named pipe files: Also used for communication between applications. Difference is that socket communication is bidirectional, unlike pipe files. Also, pipes can be created between related processses (for ex. parent and child processes), however, there is no limitation for sockets. Color code: **Light Yellow + Black Background**
+7. Named pipe files: Also used for communication between applications. Difference is that socket communication is bidirectional, unlike pipe files. Also, pipes can be created between related processes (for ex. parent and child processes), however, there is no limitation for sockets. Color code: **Light Yellow + Black Background**
 8. Archive files: Basically compressed/archived files. Color code: **Red**
 
 There are more of course, but we will not dive into that. For more info, you can check [this answer](https://askubuntu.com/a/884513).
@@ -54,7 +54,7 @@ Now that we know which file types we have, let's dig into command `ls` more. Acc
 9. **-G:** In list view, do not show group
 10. **-h:** In list view, show file size in human-readable form (2G, 12M, etc.)
 11. **-i:** Print inode (index number) of each file
-12. **-l:** Show enties in long list format
+12. **-l:** Show entries in long list format
 13. **-m:** Show list as comma-separated values
 14. **-n:** Same as `-l`, but show owner and group ID
 15. **-p:** Put '/' at the end of directory names

@@ -67,7 +67,7 @@ compile:
   $(CC) $(CFLAGS) -o ls $(sources)
 ```
 
-Short explaination:
+Short explanation:
 
 - We are defining `gcc` to be our compiler.
 - We are including all files in `ìnclude` folder (now empty, for future header files).
