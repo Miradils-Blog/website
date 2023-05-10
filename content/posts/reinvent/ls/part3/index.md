@@ -115,7 +115,7 @@ typedef struct
 } file_info;
 ```
 
-Now our struct `file_info` has its own attributes and attributes of `struct stat`. Now, question is: can we use this for C functions? Or do we need original `struct stat` and copy its contents? Let's check ourselves. We will try to get the size of files:
+Now, our `file_info` struct has its own attributes and attributes of `struct stat`. Question is: can we use this for C functions? Or do we need original `struct stat` and copy its contents? Let's check ourselves. We will try to get the size of files:
 
 ```c
 #include <stdio.h>
@@ -310,7 +310,7 @@ char get_indicator(char* permission)
 
 ```
 
-`is_archive_file` is just function checking if the extension corresponds to archive file or not. What are these weird color values? Those are MAGIC! With super useful [ASCII escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Examples) we can format and color our output. I got the exact values for those constants with `dircolors -p` command.
+`is_archive_file` is just function checking if the extension corresponds to archive file or not. What are these weird color values? Those are MAGIC! With super useful [ASCII escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Examples), we can format and color our output. I got the exact values for those constants with `dircolors -p` command.
 
 ## Collecting everything together
 
@@ -386,6 +386,6 @@ Of course, we are missing some data:
 - For char and block files, instead of size, device numbers should be shown. We have that data in `struct stat` we just need separate if statement and formatting to fix that.
 - For soft links, their reference files should be shown.
 
-But for now, these are okay, because, we are sure that we collected all needed data about all files in directory. In the upcoming posts we will handle all of these issues and have one-to-one same output.
+But for now, these are okay, because we are sure that we collected all needed data about all files in directory. In the upcoming posts we will handle all of these issues and have one-to-one same output.
 
 You can get codes from this [repository](https://github.com/Miradils-Blog/linux-ls).
