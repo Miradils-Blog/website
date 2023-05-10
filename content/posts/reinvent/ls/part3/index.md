@@ -57,18 +57,18 @@ The output would be:
 
 Okay, cool, we got the names of files. However, we need more than that. The flag `-lasi` requires all the data about every file in folder. For each normal and hidden file (`.` and `..` included) we need the following data:
 
-| I-node    | Block Size | Permissions  | Link Count |  Owner   | Owner Group | File size | Modification Time |               Name                |
-| --------- | :--------: | :----------: | :--------: | :------: | :---------: | :-------: | :---------------: | :-------------------------------: |
+|  I-node   | Block Size | Permissions  | Link Count |  Owner   | Owner Group | File size | Modification Time |               Name                |
+| :-------: | :--------: | :----------: | :--------: | :------: | :---------: | :-------: | :---------------: | :-------------------------------: |
 | 268703300 |     0      |  drwxr-xr-x  |     3      | miradilz |   axusers   |    174    |   May  5 10:04    |                 .                 |
 | 402666911 |     0      |  drwxr-xr-x  |     9      | miradilz |   axusers   |    188    |   May 10 10:21    |                ..                 |
-| 7026169   |   23180    | -rw-r-\-r-\- |     1      | miradilz |   axusers   | 23734296  |   Apr 24 10:43    |          archive.tar.xz           |
+|  7026169  |   23180    | -rw-r-\-r-\- |     1      | miradilz |   axusers   | 23734296  |   Apr 24 10:43    |          archive.tar.xz           |
 | 402671670 |     0      | brw-r-\-r-\- |     1      |   root   |    root     |   1, 2    |   Apr 27 19:19    |              block1               |
 | 402669126 |     0      | crw-r-\-r-\- |     1      |   root   |    root     |   89, 1   |   Apr 27 19:09    |             charfile1             |
 | 402671669 |     0      |  -rwxr-xr-x  |     1      | miradilz |   axusers   |     0     |   Apr 27 19:06    |               exe1                |
 | 402671664 |     0      | -rw-r-\-r-\- |     1      | miradilz |   axusers   |     0     |   Apr 27 19:00    |               file1               |
 | 402671666 |     0      |  drwxr-xr-x  |     4      | miradilz |   axusers   |    66     |   Apr 27 19:18    |              folder1              |
 | 268703301 |     0      | -rw-r-\-r-\- |     1      | miradilz |   axusers   |     0     |   May  5 10:04    |            .hiddenfile            |
-| 22668     |     0      | -rw-r-\-r-\- |     2      | miradilz |   axusers   |     0     |   Apr 27 19:06    |              hlink1               |
+|   22668   |     0      | -rw-r-\-r-\- |     2      | miradilz |   axusers   |     0     |   Apr 27 19:06    |              hlink1               |
 | 402671663 |     0      | prw-r-\-r-\- |     1      | miradilz |   axusers   |     0     |   Apr 27 19:12    |               pipe1               |
 | 402675397 |     0      |  lrwxrwxrwx  |     1      | miradilz |   axusers   |    24     |   Apr 27 19:05    | slink1-> folder1/folder11/file112 |
 | 402675424 |     0      |  srwxr-xr-x  |     1      | miradilz |   axusers   |     0     |   Apr 27 19:15    |              socket1              |
@@ -235,7 +235,7 @@ void get_file_extension(char *file_name, char *extension)
 }
 ```
 
-`strchr` is function which finds first occurance of given character and points there (NULL otherwise). `strrchr` is the same function, but reversed, meaning it shows the last occurance of given character. And for us, the last part, after dot is considered an extension.
+`strchr` is function which finds first occurence of given character and points there (NULL otherwise). `strrchr` is the same function, but reversed, meaning it shows the last occurence of given character. And for us, the last part, after dot is considered an extension.
 
 #### Color and indicator
 
@@ -312,7 +312,7 @@ char get_indicator(char* permission)
 
 `is_archive_file` is just function checking if the extension corresponds to archive file or not. What are these weird color values? Those are MAGIC! With super useful [ASCII escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Examples) we can format and color our output. I got the exact values for those constants with `dircolors -p` command.
 
-## Collecting everthing together
+## Collecting everything together
 
 So, now we have everything ready as separate parts and functions, let's join them and get full array of file info:
 
@@ -352,7 +352,7 @@ int main(int argc, char *argv[])
     }
 
     char filetime[20];
-    struct tm * timeinfo;
+    struct tm *timeinfo;
 
     for (int j = 0; j < i; ++j)
     {
@@ -365,7 +365,6 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
 ```
 
 Guess the output?
@@ -376,11 +375,17 @@ Guess the output?
 
 ![Original ls output](original_ls.png)
 
-VOILA! Almost perfect output :) Of course, we are missing some data:
+VOILA! Almost perfect output :) 
+
+## Conclusion
+
+Of course, we are missing some data:
 
 - First and foremost, the formatting. The original `ls` output adjusts every column by its most wide line, however, we have done that manually.
 - The order of files in outputs are different.
 - For char and block files, instead of size, device numbers should be shown. We have that data in `struct stat` we just need separate if statement and formatting to fix that.
 - For soft links, their reference files should be shown.
 
-But for now, these are okay, because, we are sure that we collected all needed data about all files in directory. In the upcoming posts we will fix all of these issues.
+But for now, these are okay, because, we are sure that we collected all needed data about all files in directory. In the upcoming posts we will handle all of these issues and have one-to-one same output.
+
+You can get codes from this [repository](https://github.com/Miradils-Blog/linux-ls).
