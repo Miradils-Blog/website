@@ -78,7 +78,7 @@ Okay, cool, we got the names of files. However, we need more than that. The flag
 
 What are these data?
 
-- **i-node**: Short for "index node". It is a file data structure storing every data (file size and type, UID and GUID of owner, permissions, last modification/access/change timestamps) except its name and content.
+- **i-node**: Short for "index node". It is a file data structure storing every data (file size and type, UID and GID of owner, permissions, last modification/access/change timestamps) except its name and content.
 - **block size**: The number of blocks the file takes. 1 block is usually 512B, and it is the multiple of 4 (in my case).
 - **permissions**: The first character is file type: `-` for normal file, `d` for directory, `b` for block, `c` for character, `p` for pipe, `l` for link and `s` for socket. The rest can be summarized with an image:
 
