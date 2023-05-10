@@ -8,7 +8,7 @@ menu:
     identifier: ls_part3
     parent: ls
     weight: 30
-tags: ["C", "Linux", "File Structure", "System calls", "Library calls"]
+tags: ["C", "Linux", "File Structure", "System calls", "Library functions"]
 categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
 ---
