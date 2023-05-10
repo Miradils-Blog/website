@@ -57,18 +57,22 @@ The output would be:
 
 Okay, cool, we got the names of files. However, we need more than that. The flag `-lasi` requires all the data about every file in folder. For each normal and hidden file (`.` and `..` included) we need the following data:
 
-| I-node    | Block Size | Permissions | Link Count |  Owner   | Owner Group | File size | Modification Time |   Name    |
-| --------- | :--------: | :---------: | :--------: | :------: | :---------: | :-------: | :---------------: | :-------: |
-| 268703300 |     0      | drwxr-xr-x  |     3      | miradilz |   axusers   |    174    |   May  5 10:04    |  folder   |
-| 268726696 |     0      | drwxr-xr-x  |     2      | miradilz |   axusers   |    23     |   May  8 12:50    |  include  |
-| 403732427 |     4      | -rw-r--r--  |     1      | miradilz |   axusers   |   1070    |   May  5 11:23    |  LICENSE  |
-| 402693722 |     20     | -rwxr-xr-x  |     1      | miradilz |   axusers   |   16880   |   May  8 15:07    |    ls     |
-| 403140200 |     4      | -rw-r--r--  |     1      | miradilz |   axusers   |    229    |   May  5 15:12    | Makefile  |
-| 403732428 |     4      | -rw-r--r--  |     1      | miradilz |   axusers   |   4091    |   May  5 11:23    | README.md |
-| 134350011 |     0      | drwxr-xr-x  |     2      | miradilz |   axusers   |    35     |   May  8 13:07    |    src    |
-| 791362    |     0      | drwxr-xr-x  |     2      | miradilz |   axusers   |    22     |   May  5 15:09    |   test    |
-| 402666881 |     36     | -rwxr-xr-x  |     1      | miradilz |   axusers   |   32848   |   May  5 15:15    |  test.o   |
-| 268772619 |     0      | drwxr-xr-x  |     9      | miradilz |   axusers   |    333    |   May  5 11:05    |   unity   |
+| I-node    | Block Size | Permissions  | Link Count |  Owner   | Owner Group | File size | Modification Time |               Name                |
+| --------- | :--------: | :----------: | :--------: | :------: | :---------: | :-------: | :---------------: | :-------------------------------: |
+| 268703300 |     0      |  drwxr-xr-x  |     3      | miradilz |   axusers   |    174    |   May  5 10:04    |                 .                 |
+| 402666911 |     0      |  drwxr-xr-x  |     9      | miradilz |   axusers   |    188    |   May 10 10:21    |                ..                 |
+| 7026169   |   23180    | -rw-r-\-r-\- |     1      | miradilz |   axusers   | 23734296  |   Apr 24 10:43    |          archive.tar.xz           |
+| 402671670 |     0      | brw-r-\-r-\- |     1      |   root   |    root     |   1, 2    |   Apr 27 19:19    |              block1               |
+| 402669126 |     0      | crw-r-\-r-\- |     1      |   root   |    root     |   89, 1   |   Apr 27 19:09    |             charfile1             |
+| 402671669 |     0      |  -rwxr-xr-x  |     1      | miradilz |   axusers   |     0     |   Apr 27 19:06    |               exe1                |
+| 402671664 |     0      | -rw-r-\-r-\- |     1      | miradilz |   axusers   |     0     |   Apr 27 19:00    |               file1               |
+| 402671666 |     0      |  drwxr-xr-x  |     4      | miradilz |   axusers   |    66     |   Apr 27 19:18    |              folder1              |
+| 268703301 |     0      | -rw-r-\-r-\- |     1      | miradilz |   axusers   |     0     |   May  5 10:04    |            .hiddenfile            |
+| 22668     |     0      | -rw-r-\-r-\- |     2      | miradilz |   axusers   |     0     |   Apr 27 19:06    |              hlink1               |
+| 402671663 |     0      | prw-r-\-r-\- |     1      | miradilz |   axusers   |     0     |   Apr 27 19:12    |               pipe1               |
+| 402675397 |     0      |  lrwxrwxrwx  |     1      | miradilz |   axusers   |    24     |   Apr 27 19:05    | slink1-> folder1/folder11/file112 |
+| 402675424 |     0      |  srwxr-xr-x  |     1      | miradilz |   axusers   |     0     |   Apr 27 19:15    |              socket1              |
+
 
 {{< vs 1 >}}
 
@@ -84,9 +88,9 @@ What are these data?
 - **link count**: The number of hard links. That is how many files points to this file (soft links **excluded**).
 - **owner**: The username of the owner. When flag is `-n`, UUID of owner is shown.
 - **owner group**: The username of the group. When flag is `-n`, GUID is shown.
-- **file size**: Size in bytes. When `-h` flag is set, it is shown in more readable form: 2M, 12K etc.
+- **file size**: Size in bytes. When `-h` flag is set, it is shown in more readable form: 2M, 12K etc. For block and character files, their device number is shown instead of size.
 - **modification time**: Shows the last modification time. For `-t` creation time, and for `-u` access time is shown.
-- **name**: Name of the file
+- **name**: Name of the file. If file is link, unless `-L` flag is set, it shows the file it is linked to.
 
 ## Collecting all the necessary info
 
