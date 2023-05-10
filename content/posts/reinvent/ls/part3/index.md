@@ -1,6 +1,6 @@
 ---
 title: "Getting the list of files and their info"
-date: 2023-05-07T19:00:00+02:00
+date: 2023-05-10T10:00:00+02:00
 description: "Getting the list of files and their info"
 menu:
   sidebar:
@@ -11,7 +11,6 @@ menu:
 tags: ["C", "Linux", "Shell"]
 categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
-draft: true
 ---
 
 
@@ -91,7 +90,7 @@ What are these data?
 
 ## Collecting all the necessary info
 
-To easily access every attribute of file, let's use a struct. But, wait! C already has a [`struct stat`](https://man7.org/linux/man-pages/man2/lstat.2.html) which stores almost all needed information (we miss user name, group name, color etc.). Of course, we have to write functions to handle missing data. We can use those functions when needed (maybe when it is already print time), or we create another struct and fill it beforehand with everything. I preffer going with latter, as it is easier to handle everything. Let's create another identical struct with extra data......
+To easily access every attribute of file, let's use a struct. But, wait! C already has a [`struct stat`](https://man7.org/linux/man-pages/man2/lstat.2.html) which stores almost all needed information (we miss user name, group name, color etc.). Of course, we have to write functions to handle missing data. We can use those functions when needed (maybe when it is already print time), or we create another struct and fill it beforehand with everything. I prefer going with latter, as it is easier to handle everything. Let's create another identical struct with extra data......
 
 ### WAIT, YOU CAN EXTEND STRUCTS?
 
@@ -101,11 +100,11 @@ Yep, I am shocked as well. I found this at time writing this post, when this que
 typedef struct
 {
     struct stat;
+    char name[256];
     char permission[11];
-    char color[8];
+    char color[16];
     char extension[256];
     char indicator; // for -F and -p
-
     char owner_name[256];
     char group_name[256];
 
@@ -159,7 +158,7 @@ pipe1 0
 .hiddenfile 0
 ```
 
-If you check with `ls`, these are the correct numbers. Perfect, our struct is working as it should. However, there are some data that is missing.
+IT WORKS! If you check with `ls`, these are indeed the correct numbers. However, there are some data that is missing.
 
 ### Collecting the rest of the data
 
@@ -239,16 +238,16 @@ void get_file_extension(char *file_name, char *extension)
 Again, nothing serious here:
 
 ```c
-#define COLOR_RESET "\x1b[0m" // reset color settings
-#define COLOR_REGULAR COLOR_RESET
-#define COLOR_EXECUTABLES "\033[1;32m"
-#define COLOR_DIRECTORIES "\x1b[1;34m"
-#define COLOR_LINK "\x1b[1;36m"
-#define COLOR_FIFO "\x1b[40;33m"
-#define COLOR_SOCKET "\x1b[1;35m"
-#define COLOR_BLK_CHR "\x1b[40;33;1m"
-#define COLOR_BROKEN_LINK "\x1b[40;31;1m"
-#define COLOR_ARCHIVE "\x1b[1;31m"
+#define COLOR_RESET         "\x1b[0m" // reset color settings
+#define COLOR_REGULAR       COLOR_RESET
+#define COLOR_EXECUTABLES   "\x1b[1;32m"
+#define COLOR_DIRECTORIES   "\x1b[1;34m"
+#define COLOR_LINK          "\x1b[1;36m"
+#define COLOR_FIFO          "\x1b[40;33m"
+#define COLOR_SOCKET        "\x1b[1;35m"
+#define COLOR_BLK_CHR       "\x1b[40;33;1m"
+#define COLOR_BROKEN_LINK   "\x1b[40;31;1m"
+#define COLOR_ARCHIVE       "\x1b[1;31m"
 
 void get_color(char* permission, char *extension, char *color)
 {
@@ -320,6 +319,7 @@ So, now we have everything ready as separate parts and functions, let's join the
 #include <file_data.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 
 int main(int argc, char *argv[])
 {
@@ -334,7 +334,7 @@ int main(int argc, char *argv[])
 
     while ((file = readdir(dir)) != NULL)
     {
-        stat(file->d_name, (struct stat *)&files[i]);
+        lstat(file->d_name, (struct stat *)&files[i]);
 
         strcpy(files[i].name, file->d_name);
         get_username_from_uid(files[i].st_uid, files[i].owner_name);
@@ -353,15 +353,15 @@ int main(int argc, char *argv[])
     for (int j = 0; j < i; ++j)
     {
         timeinfo = localtime(&files[j].st_mtime);
-        strftime(filetime, 20, "%b %d %H:%M", timeinfo);
+        strftime(filetime, 20, "%b %-2d %H:%M", timeinfo);
 
-        printf("%-9d\t%d\t%s\t%d\t%-10s\t%s\t%-8d\t%s\t%s%s%s\n", files[j].st_ino, files[j].st_blocks / 2, files[j].permission, 
-                                                                files[j].st_nlink, files[j].owner_name, files[j].group_name, 
-                                                                files[j].st_size, filetime, files[j].color, files[j].name, COLOR_RESET);
+        printf("%9d %5d %s %d %-8s %-7s %8d %s %s%s%s\n", files[j].st_ino, files[j].st_blocks / 2, files[j].permission, files[j].st_nlink, 
+                                                    files[j].owner_name, files[j].group_name, files[j].st_size, filetime, files[j].color, files[j].name, COLOR_RESET);
     }
 
     return 0;
 }
+
 ```
 
 Guess the output?
@@ -374,9 +374,9 @@ Guess the output?
 
 VOILA! Almost perfect output :) Of course, we are missing some data:
 
-- First and foremost, the formatting. The original `ls` is way more compact, as they do not use tabs, instead adjusts every column by its most wide line.
-- The order of files in output is different.
-- For char and block files, instead of size, device numbers should be shown.
+- First and foremost, the formatting. The original `ls` output adjusts every column by its most wide line, however, we have done that manually.
+- The order of files in outputs are different.
+- For char and block files, instead of size, device numbers should be shown. We have that data in `struct stat` we just need separate if statement and formatting to fix that.
 - For soft links, their reference files should be shown.
 
-But for now, these are okay, because, we are sure that we collected all needed data about all files in directory.  
+But for now, these are okay, because, we are sure that we collected all needed data about all files in directory. In the upcoming posts we will fix all of these issues.
