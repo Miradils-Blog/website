@@ -178,7 +178,7 @@ void get_username_from_uid(int uid, char *username)
     struct passwd *pws;
     pws = getpwuid(uid);
 
-    strncpy(username, 256, pws->pw_name);
+    strncpy(username, pws->pw_name, 256);
 }
 
 void get_groupname_from_gid(int gid, char *groupname)
@@ -186,7 +186,7 @@ void get_groupname_from_gid(int gid, char *groupname)
     struct group *grp;
     grp = getgrgid(gid);
 
-    strncpy(groupname, 256, grp->gr_name);
+    strncpy(groupname, grp->gr_name, 256);
 }
 ```
 
@@ -342,7 +342,7 @@ int main(int argc, char *argv[])
     {
         lstat(file->d_name, (struct stat *)&files[i]);
 
-        strncpy(files[i].name, 256, file->d_name);
+        strncpy(files[i].name, file->d_name, 256);
         get_username_from_uid(files[i].st_uid, files[i].owner_name);
         get_groupname_from_gid(files[i].st_gid, files[i].group_name);
         construct_permission_str(files[i].st_mode, files[i].permission);
