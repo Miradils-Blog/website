@@ -178,7 +178,7 @@ void get_username_from_uid(int uid, char *username)
     struct passwd *pws;
     pws = getpwuid(uid);
 
-    strcpy(username, pws->pw_name);
+    strncpy(username, 256, pws->pw_name);
 }
 
 void get_groupname_from_gid(int gid, char *groupname)
@@ -186,9 +186,11 @@ void get_groupname_from_gid(int gid, char *groupname)
     struct group *grp;
     grp = getgrgid(gid);
 
-    strcpy(groupname, grp->gr_name);
+    strncpy(groupname, 256, grp->gr_name);
 }
 ```
+
+We are using `strncpy` to prevent buffer overflow (in case, user/group name is more than 256 chars).
 
 #### Permission String
 
@@ -340,7 +342,7 @@ int main(int argc, char *argv[])
     {
         lstat(file->d_name, (struct stat *)&files[i]);
 
-        strcpy(files[i].name, file->d_name);
+        strncpy(files[i].name, 256, file->d_name);
         get_username_from_uid(files[i].st_uid, files[i].owner_name);
         get_groupname_from_gid(files[i].st_gid, files[i].group_name);
         construct_permission_str(files[i].st_mode, files[i].permission);
