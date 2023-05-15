@@ -43,10 +43,10 @@ There are more of course, but we will not dive into that. For more info, you can
 
 Now that we know which file types we have, let's dig into command `ls` more. According to the [manual](https://man7.org/linux/man-pages/man1/ls.1.html), there are many flags for the command. The most used ones and the ones that we will rewrite are:
 
-1. **-a:** Show hidden entries (a.k.a. files starting with '.')
-2. **-A:** Do not show current and previous directories ("." and "..")
+1. **-a:** Show hidden entries (a.k.a. files starting with `.`)
+2. **-A:** Do not show current and previous directories (`.` and `..`)
 3. **-C:** List entries in tabular format (by columns)
-4. **-c:** Sort entries by their "last modification time"
+4. **-c:** with `-lt`: sort by, and show, ctime (time of last modification of file status information); with `-l`: show ctime and sort by name; otherwise: sort by ctime.
 5. **-d:** List directories themselves, not their contents
 6. **-f:** List all files in their order in directory, without any colors
 7. **-F:** Append indicator (kind of like extension) to the end of filename, depending their type (one of */=>@|)
@@ -63,7 +63,7 @@ Now that we know which file types we have, let's dig into command `ls` more. Acc
 18. **-R:** List all subdirectories recursively.
 19. **-S:** Sort file by size, largest first
 20. **-t:** Sort by time, newest first
-21. **-u:** Sort and show access time. Newest first.
+21. **-u:** with `-lt`: sort by, and show, access time with `-l`: show access time and sort by name otherwise: sort by access time.
 22. **-U:** Do not sort, list entries in directory order
 23. **-x:** List entries by lines
 24. **-X:** Sort alphabetically by file extensions
