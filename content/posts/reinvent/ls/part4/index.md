@@ -14,7 +14,6 @@ series: ["LS"]
 draft: true
 ---
 
-
 > **In this article we will start processing some flags of `ls` command.**
 >
 > **If you want to know more about command, please read Part 1.**
@@ -32,7 +31,6 @@ First things first, let's remember how our file structure looks like (`tree` com
 ![File structure](file_structure.png)
 
 In [previous part](../part3/) we collected all necessary info of all files and printed them out. However, we used them only for printing, nothing else. For some flags, we don't even need the info of certain files (by default, we do not need info of hidden files, or in case of `-A` we do not need data of current (`.`) and previous (`..`) directory, etc.). So, we need to process the flags to know which files do we need to collect data of, and how to print the needed output.
-
 
 ## Analyzing Print Style Flags
 
@@ -166,9 +164,9 @@ We are done with print format flags! Next, we will look into sorting flags.
 Similar to printing style, there are multiple flags which define sorting, and they too, override each other:
 
 - **-c:** with `-lt`: sort by, and show, ctime (time of last modification of file status information); with `-l`: show ctime and sort by name; otherwise: sort by ctime.
-- **-f:** List all files in their order in directory, without any colors. This flag turns off the -l, -t, -s, and -r flags, and turns on the -a flag.
+- **-f:** List all files in their order in directory, without any colors. This flag turns off the `-l`, `-t`, `-s`, and `-r` flags, and turns on the `-a` flag.
 - **-S:** Sort file by size, largest first
-- **-t:** Sort by time, newest first. Default by "last modification time".
+- **-t:** Sort by time, newest first. Default by mtime (last modification time).
 - **-u:** with `-lt`: sort by, and show, access time with `-l`: show access time and sort by name otherwise: sort by access time.
 - **-U:** Do not sort, list entries in directory order
 - **-X:** Sort alphabetically by file extensions
@@ -274,7 +272,6 @@ Now, we are left with:
 - **-R:** List all subdirectories recursively.
 
 All of them are one boolean field in struct, and they do not override each other (except `-a` and `-A`). So, we can finalize our functions as:
-
 
 ```c
 #include <parser.h>
@@ -412,4 +409,135 @@ We also added `init_options` function, which initializes struct by its default v
 
 ## Testing 
 
-Now that we are done with processing flags, let's test our code. In [part 2](../part2/) we configured Unity Test Framework for future use. Now, we will test `parse_flag` function and make sure all flags are set correctly. Let's create a new file `test_parser.c` and check different flags there.
+Now that we are done with processing flags, let's test our code. In [part 2](../part2/) we configured Unity Test Framework for future use. Now, we will test `parse_flag` function and make sure all flags are set correctly. Let's create a new file `test_parser.c` and check different flags there:
+
+```c
+options_t options;
+
+void setUp(void)
+{
+    init_options(&options);
+}
+
+void test_ltu(void)
+{
+    parse_flags((char *[]){"-ltu"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(LIST_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_TRUE(options.ll_settings.show_extra_data);
+    TEST_ASSERT_EQUAL_MESSAGE(ACCESS_TIMESTAMP, options.ll_settings.show_timestamp, "Wrong timestamp for long list!");
+    TEST_ASSERT_EQUAL_MESSAGE(BY_ACCESS_TIME, options.sort_by, "Sort by is wrong!");
+}
+
+void test_lut(void)
+{
+    // -t should not override -u
+    parse_flags((char *[]){"-lut"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(LIST_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_TRUE(options.ll_settings.show_extra_data);
+    TEST_ASSERT_EQUAL_MESSAGE(ACCESS_TIMESTAMP, options.ll_settings.show_timestamp, "Wrong timestamp for long list!");
+    TEST_ASSERT_EQUAL_MESSAGE(BY_ACCESS_TIME, options.sort_by, "Sort by is wrong!");
+}
+
+void test_flut(void)
+{
+    // -f should be overriden by rest
+    parse_flags((char *[]){"-flut"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(LIST_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_TRUE(options.ll_settings.show_extra_data);
+    TEST_ASSERT_EQUAL_MESSAGE(BY_ACCESS_TIME, options.sort_by, "Sort by is wrong!");
+}
+
+void test_lftc(void)
+{
+    // -f overrides -l, but -tc overrides -f
+    parse_flags((char *[]){"-lftc"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(TABULAR_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_FALSE(options.colorful_output);
+    TEST_ASSERT_EQUAL_MESSAGE(BY_CHANGE_TIME, options.sort_by, "Sort by is wrong!");
+}
+
+void test_ltfu(void)
+{
+    // -f overrides everything
+    parse_flags((char *[]){"-ltfu"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(TABULAR_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_FALSE(options.colorful_output);
+    TEST_ASSERT_EQUAL_MESSAGE(NO_SORT, options.sort_by, "Sort by is wrong!");
+}
+
+void test_tflu(void)
+{
+    // -f overrides everything except -l
+    parse_flags((char *[]){"-tflu"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(LIST_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_EQUAL_MESSAGE(ACCESS_TIMESTAMP, options.ll_settings.show_timestamp, "Wrong timestamp for long list!");
+    TEST_ASSERT_FALSE(options.colorful_output);
+    TEST_ASSERT_EQUAL_MESSAGE(NO_SORT, options.sort_by, "Sort by is wrong!");
+}
+
+void test_lctf(void)
+{
+    // -f overrides everything
+    parse_flags((char *[]){"-lctf"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(TABULAR_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_FALSE(options.colorful_output);
+    TEST_ASSERT_EQUAL_MESSAGE(NO_SORT, options.sort_by, "Sort by is wrong!");
+}
+
+void test_c(void)
+{
+    // No sort option defined, -c should be sort option
+    parse_flags((char *[]){"-c"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(TABULAR_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_EQUAL_MESSAGE(BY_CHANGE_TIME, options.sort_by, "Sort by is wrong!");
+}
+
+void test_fc(void)
+{
+    // -c cannot override -f
+    parse_flags((char *[]){"-fc"}, 1, &options);
+
+    TEST_ASSERT_EQUAL_MESSAGE(TABULAR_FORMAT, options.print_style, "Print style is wrong!");
+    TEST_ASSERT_EQUAL_MESSAGE(NO_SORT, options.sort_by, "Sort by is wrong!");
+} 
+
+void test_fA(void)
+{
+    // -A overrides -f
+    parse_flags((char *[]){"-fA"}, 1, &options);
+
+    TEST_ASSERT_FALSE(options.colorful_output);
+
+    TEST_ASSERT_TRUE(options.show_hidden_files);
+    TEST_ASSERT_FALSE(options.show_curr_prev_dirs);
+}
+
+void test_Af(void)
+{
+    // -f overrides -A
+    parse_flags((char *[]){"-Af"}, 1, &options);
+
+    TEST_ASSERT_FALSE(options.colorful_output);
+
+    TEST_ASSERT_TRUE(options.show_hidden_files);
+    TEST_ASSERT_TRUE(options.show_curr_prev_dirs);
+}
+```
+
+We are checking different flags, which must or must not override each other depending on the flag sequence. If we run `make runtest`:
+
+![Output of tests](test_output.png)
+
+## Conclusion
+
+That's it! We processed all needed flags and stored them, and all tests pass. In the next chapter, we will use these flags and we will print data in correct format and order. 
+
+You can get codes from this [repository](https://github.com/Miradils-Blog/linux-ls).
