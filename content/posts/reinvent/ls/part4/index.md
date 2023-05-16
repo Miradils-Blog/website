@@ -259,6 +259,7 @@ If we were explain this part again: `BY_MODIFICATION_TIME` is set when there is 
 ## The rest of the flags
 
 Now, we are left with:
+
 - **-a:** Show hidden entries (a.k.a. files starting with `.`)
 - **-A:** Do not show current and previous directories (`.` and `..`)
 - **-d:** List directories themselves, not their contents
@@ -407,7 +408,7 @@ void parse_flags(char *flags[], int count, options_t *options)
 
 We also added `init_options` function, which initializes struct by its default values.
 
-## Testing 
+## Testing
 
 Now that we are done with processing flags, let's test our code. In [part 2](../part2/) we configured Unity Test Framework for future use. Now, we will test `parse_flag` function and make sure all flags are set correctly. Let's create a new file `test_parser.c` and check different flags there:
 
@@ -538,6 +539,6 @@ We are checking different flags, which must or must not override each other depe
 
 ## Conclusion
 
-That's it! We processed all needed flags and stored them, and all tests pass. In the next chapter, we will use these flags and we will print data in correct format and order. 
+That's it! We processed all needed flags and stored them, and all tests pass. In the next chapter, we will use these flags and we will print data in correct format and order.
 
 You can get codes from this [repository](https://github.com/Miradils-Blog/linux-ls).
