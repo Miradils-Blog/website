@@ -11,7 +11,6 @@ menu:
 tags: ["C", "Linux", "Shell", "File System"]
 categories: ["Rewriting Linux `ls` command"]
 series: ["LS"]
-draft: true
 ---
 
 > **In this article we will start processing some flags of `ls` command.**
@@ -24,13 +23,13 @@ draft: true
 >
 > **Note:** Source codes can be found at: <https://github.com/Miradils-Blog/linux-ls>
 
-## Getting the list of files
+## Introduction
 
 First things first, let's remember how our file structure looks like (`tree` command was used for output):
 
 ![File structure](file_structure.png)
 
-In [previous part](../part3/) we collected all necessary info of all files and printed them out. However, we used them only for printing, nothing else. For some flags, we don't even need the info of certain files (by default, we do not need info of hidden files, or in case of `-A` we do not need data of current (`.`) and previous (`..`) directory, etc.). So, we need to process the flags to know which files do we need to collect data of, and how to print the needed output.
+In [previous part](../part3/) we collected all necessary info of all files and printed them out. However, we used them only for printing, nothing else. For some flags, we don't even need the info of certain files (by default, we do not need info of hidden files, or in case of `-A` we do not need data of current (`.`) and previous (`..`) directory, etc.). So, we need to process the flags to know which files we need to collect data of, and how to print the needed output. So, let's start with flags, which affect our printing style.
 
 ## Analyzing Print Style Flags
 
@@ -80,34 +79,34 @@ void parse_flags(char *flags[], int count, options_t *options)
         {
             while (*(++flags[i])) // iterate through characters/flags
             {
-              switch (*flags[i])
-              {
-              case 'C':
-              case 'f':
-                  options->print_style = TABULAR_FORMAT;
-                  break;
-              case 'g':
-              case 'l':
-              case 'n':
-              case '1':
-                  options->print_style = LIST_FORMAT;
-                  break;
-              case 'm':
-                  options->print_style = COMMA_SEPARATED_FORMAT;
-                  break;
-              case 'x':
-                  options->print_style = ONE_LINE_FORMAT;
-                  break;
-              default:
-                  break;  
-              }
+                switch (*flags[i])
+                {
+                case 'C':
+                case 'f':
+                    options->print_style = TABULAR_FORMAT;
+                    break;
+                case 'g':
+                case 'l':
+                case 'n':
+                case '1':
+                    options->print_style = LIST_FORMAT;
+                    break;
+                case 'm':
+                    options->print_style = COMMA_SEPARATED_FORMAT;
+                    break;
+                case 'x':
+                    options->print_style = ONE_LINE_FORMAT;
+                    break;
+                default:
+                    break;
+                }
           }
        }
     }
 }
 ```
 
-We can see that, `print_style` is set according to the "latest" flag. Moreover, `1`, `l`, `n` and `g` has the same format, but latter three shows extra info about all files. But, they also affect our output, so we need to handle them. For example, all three flags override `-1`, and `-g` overrides `-l`. So, let's create another stuct to handle these flags:
+We can see that, `print_style` is set according to the "latest" flag. Moreover, `1`, `l`, `n` and `g` have the same format, but latter three shows extra info about all files. However, they also affect our output, so we need to handle them. For example, all three flags override `-1`, and `-g` overrides `-l`. So, let's create another stuct to handle these flags:
 
 ```c
 typedef struct
@@ -153,7 +152,7 @@ case '1':
     options->print_style = LIST_FORMAT;
     break;
 default:
-    break;  
+    break;
 }
 ```
 
@@ -236,7 +235,7 @@ case 'X':
     options->sort_by = BY_ALPHABETICAL_EXTENSION;
     break;
 default:
-    break;  
+    break;
 }
 ```
 
@@ -388,7 +387,7 @@ void parse_flags(char *flags[], int count, options_t *options)
                     options->print_style = LIST_FORMAT;
                     break;
                 default:
-                    break;  
+                    break;
                 }
             }
         }
@@ -508,7 +507,7 @@ void test_fc(void)
 
     TEST_ASSERT_EQUAL_MESSAGE(TABULAR_FORMAT, options.print_style, "Print style is wrong!");
     TEST_ASSERT_EQUAL_MESSAGE(NO_SORT, options.sort_by, "Sort by is wrong!");
-} 
+}
 
 void test_fA(void)
 {
