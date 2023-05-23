@@ -25,10 +25,6 @@ series: ["LS"]
 
 ## Introduction
 
-First things first, let's remember how our file structure looks like (`tree` command was used for output):
-
-![File structure](file_structure.png)
-
 In [previous part](../part3/) we collected all necessary info of all files and printed them out. However, we used them only for printing, nothing else. For some flags, we don't even need the info of certain files (by default, we do not need info of hidden files, or in case of `-A` we do not need data of current (`.`) and previous (`..`) directory, etc.). So, we need to process the flags to know which files we need to collect data of, and how to print the needed output. So, let's start with flags, which affect our printing style.
 
 ## Analyzing Print Style Flags
