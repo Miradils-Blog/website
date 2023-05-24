@@ -9,8 +9,9 @@ menu:
     parent: ls
     weight: 20
 tags: ["C", "Linux", "Shell", "File System"]
-categories: ["Rewriting Linux `ls` command"]
-series: ["LS"]
+categories: ["C", "Linux"]
+series: 
+  - rewrite_ls
 ---
 
 > **In this article we will start the first steps to rewrite `ls` command. If you want to know more about command, please read Part 1.**

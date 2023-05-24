@@ -32,6 +32,11 @@ outputs:
 # Enable global emoji support
 enableEmoji: true
 
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
 # Site parameters
 params:
   # Background image of the landing page
@@ -98,33 +103,6 @@ params:
       services:
         disqus:
           shortName: mmzeynalli
-        # valine:
-        #   appId: HTV6askWxVo3vOxlqjjaq2hd-MsYXbMMI
-        #   appKey: pVrT3C85KGIuk27t07eh6bUC
-        #   avatar: retro
-        #   placeholder: Share your thought.
-        #   lang: en
-        #   recordIP: true
-        #   enableQQ: true
-        # utteranc:
-        #   repo: github.com/hugo-toha/hugo-toha.github.io
-        #   issueTerm: title
-        #   theme: github-light
-        # giscus:
-        #   repo: your-repo/name
-        #   repoID: your-repo-id
-        #   category: your-category
-        #   categoryID: your-category-id
-        # theme: light
-        # map: url
-        # reaction: 1
-        # metadata: 0
-        # inputPosition: bottom
-        # crossOrigin: anonymous
-        # commento:
-        #   serverURL: cdn.commento.io
-        #   autoInit: true
-        #   hideDeleted: false
 
     # Enable Analytics
     # analytics:
@@ -165,6 +143,9 @@ params:
 
     # Show tags under the post title
     tags:
+      enable: true
+    
+    taxonomies:
       enable: true
 
     # Specify whether to show flag in the language selector. Default is true.

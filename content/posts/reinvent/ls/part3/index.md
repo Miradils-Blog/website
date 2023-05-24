@@ -9,8 +9,9 @@ menu:
     parent: ls
     weight: 30
 tags: ["C", "Linux", "File Structure", "System calls", "Library functions"]
-categories: ["Rewriting Linux `ls` command"]
-series: ["LS"]
+categories: ["C", "Linux"]
+series: 
+  - rewrite_ls
 ---
 
 

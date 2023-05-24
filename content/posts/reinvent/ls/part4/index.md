@@ -9,8 +9,9 @@ menu:
     parent: ls
     weight: 40
 tags: ["C", "Linux", "Shell", "File System"]
-categories: ["Rewriting Linux `ls` command"]
-series: ["LS"]
+categories: ["C", "Linux"]
+series: 
+  - rewrite_ls
 ---
 
 > **In this article we will start processing some flags of `ls` command.**
