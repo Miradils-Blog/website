@@ -74,7 +74,6 @@ Okay, cool, we got the names of files. However, we need more than that. The flag
 | 402675397 |     0      |  lrwxrwxrwx  |     1      | miradilz |   axusers   |    24     |   Apr 27 19:05    | slink1-> folder1/folder11/file112 |
 | 402675424 |     0      |  srwxr-xr-x  |     1      | miradilz |   axusers   |     0     |   Apr 27 19:15    |              socket1              |
 
-
 {{< vs 1 >}}
 
 What are these data?
@@ -374,11 +373,11 @@ Guess the output?
 
 ![Our first output](first_ls_output.png)
 
-**VS**
+**VS**  
 
 ![Original ls output](original_ls.png)
 
-VOILA! Almost perfect output :) 
+VOILA! Almost perfect output :)
 
 ## Conclusion
 

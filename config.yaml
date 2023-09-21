@@ -4,6 +4,20 @@ languageCode: en-us
 title: "Miradil's Blog"
 theme: "toha"
 
+# Use Hugo modules to add theme
+module:
+  imports:
+    - path: toha
+  mounts:
+    - source: static/files
+      target: static/files
+    - source: ./node_modules/flag-icon-css/flags
+      target: static/flags
+    - source: ./node_modules/@fontsource/mulish/files
+      target: static/files
+    - source: ./node_modules/katex/dist/fonts
+      target: static/fonts
+
 # Manage languages
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
 languages:
@@ -16,6 +30,9 @@ languages:
 
 # Control TOC depth
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   tableOfContents:
     startLevel: 2
     endLevel: 6
@@ -144,7 +161,7 @@ params:
     # Show tags under the post title
     tags:
       enable: true
-    
+
     taxonomies:
       enable: true
 
@@ -218,6 +235,9 @@ params:
         plyr:
           # options doc: https://github.com/sampotts/plyr#options
           # fullscreen: true
+
+    readingTime:
+      enable: true
 
   # Provide footer configuration.
   footer:
