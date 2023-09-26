@@ -8,7 +8,7 @@ menu:
     identifier: ls_part4
     parent: ls
     weight: 40
-tags: ["C", "Linux", "Shell", "File System"]
+tags: ["C", "Linux", "System Calls", "File System"]
 categories: ["C", "Linux"]
 series: 
   - rewrite_ls
@@ -38,7 +38,6 @@ First, we will look at flags that affect our printing style:
 - **-l:** Show entries in long list format
 - **-m:** Show list as comma-separated values
 - **-n:** Same as `-l`, but show owner and group ID
-- **-x:** List entries by lines
 - **-1:** List one file per line
 
 Each of these flags affect the output style. Moreover, they override each other: if our flag is `-lm`, `m` will override `l` and output will be comma-separated. Otherwise, if flag is `-ml`, output will be list, that is, one file per line with extra data. So, how can we handle this easily? Enums, right! We will create a new file `options.h` and store that enum there:
@@ -91,9 +90,6 @@ void parse_flags(char *flags[], int count, options_t *options)
                 case 'm':
                     options->print_style = COMMA_SEPARATED_FORMAT;
                     break;
-                case 'x':
-                    options->print_style = ONE_LINE_FORMAT;
-                    break;
                 default:
                     break;
                 }
@@ -141,9 +137,6 @@ case 'n':
     options->ll_settings.show_owner_ids = true;
     options->ll_settings.show_extra_data = true;
     options->print_style = LIST_FORMAT;
-    break;
-case 'x':
-    options->print_style = ONE_LINE_FORMAT;
     break;
 case '1':
     options->print_style = LIST_FORMAT;
@@ -373,9 +366,6 @@ void parse_flags(char *flags[], int count, options_t *options)
                     break;
                 case 'U':
                     options->sort_by = NO_SORT;
-                    break;
-                case 'x':
-                    options->print_style = ONE_LINE_FORMAT;
                     break;
                 case 'X':
                     options->sort_by = BY_ALPHABETICAL_EXTENSION;

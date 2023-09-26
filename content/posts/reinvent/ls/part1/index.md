@@ -66,9 +66,8 @@ Now that we know which file types we have, let's dig into command `ls` more. Acc
 20. **-t:** Sort by time, newest first
 21. **-u:** with `-lt`: sort by, and show, access time with `-l`: show access time and sort by name otherwise: sort by access time.
 22. **-U:** Do not sort, list entries in directory order
-23. **-x:** List entries by lines
-24. **-X:** Sort alphabetically by file extensions
-25. **-1:** List one file per line
+23. **-X:** Sort alphabetically by file extensions
+24. **-1:** List one file per line
 
 ## What is the plan?
 
