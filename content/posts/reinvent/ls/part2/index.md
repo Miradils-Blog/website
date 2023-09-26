@@ -8,9 +8,9 @@ menu:
     identifier: ls_part2
     parent: ls
     weight: 20
-tags: ["C", "Linux", "Shell", "File System"]
+tags: ["C", "Linux", "System Calls", "File System"]
 categories: ["C", "Linux"]
-series: 
+series:
   - rewrite_ls
 ---
 

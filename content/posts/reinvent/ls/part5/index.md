@@ -1,6 +1,6 @@
 ---
 title: "Formatting the output"
-date: 2023-09-01T10:00:00+02:00
+date: 2023-09-28T14:00:00+02:00
 description: "Formatting the output"
 menu:
   sidebar:
@@ -8,11 +8,11 @@ menu:
     identifier: ls_part5
     parent: ls
     weight: 50
-tags: ["C", "Linux", "Shell", "File System"]
+tags: ["C", "Linux", "System Calls", "File System"]
 categories: ["C", "Linux"]
 series:
   - rewrite_ls
-draft: true
+# draft: true
 ---
 
 > **In this article we will apply flags from previous post and format output `ls` command.**
@@ -259,6 +259,7 @@ And here is our output, compared to original `ls`.
 ![Output of comma separated ls](output_cs.png)
 
 **The function `print_name` is used to print color, file name, quotes and indicators if needed, with needed padding (for tabular format).**
+
 ### 2. List
 
 For list printing, we just print everything we know, with the widths we already calculated, so our entries are alligned:
@@ -457,5 +458,69 @@ Notice how the padding and column count changes, if we add `-QF` flags, which af
 
 ## Tests
 
+All we need is to make sure out tests run correct:
+
+```C
+void test_ls_flags(void)
+{
+    // TEST_IGNORE(); // until we fix our code, we will ignore this test unit
+    FILE *pipe;
+    system("make"); // run 'make' to generate executable
+
+    char *test_flags[] = {
+        "-mr",
+        "-1i",
+        "-l",
+        "-A",
+        "-lA",
+        "-gu",
+        "-qpu",
+    }; // list of flags to test
+
+    char *original_ls_flags[] = {
+        "--format=commas",
+        "",
+        "",
+        "--format=across",
+        "",
+        "",
+        "--format=across",
+        "",
+    };
+
+    char error_msg[100];
+    int flag_cnt = sizeof(test_flags) / sizeof(char *); // get the number of flags
+
+    for (int i = 0; i < flag_cnt; ++i)
+    {
+        // Make sizes large enough to store outputs
+        char ls_output[1024] = {0};
+        char our_output[1024] = {0};
+        char command[128];
+
+        // Run original ls command and capture output
+        sprintf(command, "ls folder/ %s -w 0 --color=always %s", test_flags[i], original_ls_flags[i]);
+        pipe = popen(command, "r");
+        fread(ls_output, 1, 1024, pipe);
+        pclose(pipe);
+
+        // Run our code and capture output
+        sprintf(command, "./ls folder/ %s", test_flags[i]);
+        pipe = popen(command, "r");
+        fread(our_output, 1, 1024, pipe);
+        pclose(pipe);
+
+        // Compare
+        sprintf(error_msg, "Failed flag: %s", test_flags[i]);
+        TEST_ASSERT_EQUAL_STRING_MESSAGE(ls_output, our_output, error_msg);
+    }
+}
+```
+
+Consider that, we just give flags in array, and test all of them in loop with original `ls` command. By default, `ls` does not show colors, when used with pipe, so we use `--color=always` to have comparision with colors. Moreover, the separator symbol in `ls` also changes when used with pipe. For example, even though `ls` will produce columnwise output in shell, if used in pipe, the files will be separated by `\n` character, instead of double space. To handle this, we also force `ls` format, depending on command we are using. Overall, our result is:
 
 ![Output of tests](test_output.png)
+
+## Conclusion
+
+THAT'S IT. We are done with journey, it was exhausting, but really fun one. I really enjoyed while working on it, and learned new things as well. I know, I missed some flags (such as `-h`, `-R` etc.), and my code might have some gaps or bugs. My [repository](https://github.com/Miradils-Blog/linux-ls/) is open for PRs, if you have suggestions, you are welcome to contribute. I am finishing series here, but I might return to this project to finish the other flag as well, maybe, sometime in the future. Thank you for being a part of this long journey!
