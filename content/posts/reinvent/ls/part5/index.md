@@ -255,14 +255,17 @@ And here is our output, compared to original `ls`.
 
 ### 2. List
 
-For list printing, we just print everything we know, with the widths we already calculated, so our entries are alligned:
+For list printing, we just print everything we know, with the widths we already calculated, so our entries are aligned:
 
 ```C
-if (options->show_total)
-    printf("total %d\n", widths->total_blocks);
+static void print_list(file_info *files, int count, options_t *options, widths_t *widths)
+{
+    if (options->show_total)
+        printf("total %d\n", widths->total_blocks);
 
     for (int i = 0; i < count; ++i)
     {
+
         if (options->show_inode)
             printf("%*d ", widths->inode_width, files[i].st_ino);
 
@@ -299,9 +302,9 @@ if (options->show_total)
             char filetime[14];
             struct tm *timeinfo;
 
-            if (options->sort_by == ACCESS_TIMESTAMP)
+            if (options->ll_settings.show_timestamp == ACCESS_TIMESTAMP)
                 timeinfo = localtime(&files[i].st_atime);
-            else if (options->sort_by == CHANGE_TIMESTAMP)
+            else if (options->ll_settings.show_timestamp == CHANGE_TIMESTAMP)
                 timeinfo = localtime(&files[i].st_ctime);
             else
                 timeinfo = localtime(&files[i].st_mtime);
@@ -311,9 +314,6 @@ if (options->show_total)
             strftime(filetime, 15, "%b %e %H:%M ", timeinfo);
             printf("%13s", filetime);
         }
-
-        if (i == 0)
-            printf("%s", COLOR_RESET); // reset color, in case previous command did not
 
         print_name(files[i], options);
 
@@ -339,9 +339,10 @@ if (options->show_total)
 
         printf("\n");
     }
+}
 ```
 
-We print i-node if needed, and other info if our flag is not `-1`. When it comes to size, char and block devices show their major and minor values, so we handle that accordinly as well. If we have link among files, we also print the name of the file it refers to. Thus, we have the following output:
+We print i-node if needed, and other info if our flag is not `-1`. When it comes to size, char and block devices show their major and minor values, so we handle that accordingly as well. If we have link among files, we also print the name of the file it refers to. Thus, we have the following output:
 
 ![Output of list ls](output_list.png)
 
@@ -515,7 +516,7 @@ void test_ls_flags(void)
 }
 ```
 
-Consider that, we just give flags in array, and test all of them in loop with original `ls` command. By default, `ls` does not show colors, when used with pipe, so we use `--color=always` to have comparision with colors. Moreover, the separator symbol in `ls` also changes when used with pipe. For example, even though `ls` will produce columnwise output in shell, if used in pipe, the files will be separated by `\n` character, instead of double space. To handle this, we also force `ls` format (`across` for tabular, `comma` for comma separated), depending on command we are using. Overall, our result is:
+Consider that, we just give flags in array, and test all of them in loop with original `ls` command. By default, `ls` does not show colors, when used with pipe, so we use `--color=always` to have comparison with colors. Moreover, the separator symbol in `ls` also changes when used with pipe. For example, even though `ls` will produce column-wise output in shell, if used in pipe, the files will be separated by `\n` character, instead of double space. To handle this, we also force `ls` format (`across` for tabular, `comma` for comma separated), depending on command we are using. Overall, our result is:
 
 ![Output of tests](test_output.png)
 
