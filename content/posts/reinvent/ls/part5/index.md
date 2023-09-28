@@ -1,10 +1,10 @@
 ---
-title: "Formatting the output"
-date: 2023-09-28T14:00:00+02:00
-description: "Formatting the output"
+title: "Sorting and formatting the output"
+date: 2023-09-28T10:00:00+02:00
+description: "Sorting and formatting the output"
 menu:
   sidebar:
-    name: "Formatting the output"
+    name: "Sorting and formatting the output"
     identifier: ls_part5
     parent: ls
     weight: 50
@@ -12,7 +12,6 @@ tags: ["C", "Linux", "System Calls", "File System"]
 categories: ["C", "Linux"]
 series:
   - rewrite_ls
-# draft: true
 ---
 
 > **In this article we will apply flags from previous post and format output `ls` command.**
@@ -266,7 +265,7 @@ For list printing, we just print everything we know, with the widths we already 
 
 ```C
 if (options->show_total)
-        printf("total %d\n", widths->total_blocks);
+    printf("total %d\n", widths->total_blocks);
 
     for (int i = 0; i < count; ++i)
     {
@@ -324,26 +323,25 @@ if (options->show_total)
 
         print_name(files[i], options);
 
-        if (options->ll_settings.show_extra_data)
-            if (files[i].permission[0] == 'l')
-            {
-                printf(" -> ");
+        if (options->ll_settings.show_extra_data && files[i].permission[0] == 'l')
+        {
+            printf(" -> ");
 
-                int len;
-                char buff[256];
-                file_info linked_file;
+            int len;
+            char buff[256];
+            file_info linked_file;
 
-                len = readlink(files[i].name, buff, sizeof(buff));
-                strncpy(linked_file.name, buff, len);
-                linked_file.name[len] = 0;
+            len = readlink(files[i].name, buff, sizeof(buff));
+            strncpy(linked_file.name, buff, len);
+            linked_file.name[len] = 0;
 
-                stat(files[i].name, (struct stat *)&linked_file);
-                construct_permission_str(linked_file.st_mode, linked_file.permission);
-                get_color(linked_file.permission, linked_file.extension, linked_file.color);
-                linked_file.indicator = get_indicator(linked_file.permission);
+            stat(files[i].name, (struct stat *)&linked_file);
+            construct_permission_str(linked_file.st_mode, linked_file.permission);
+            get_color(linked_file.permission, linked_file.extension, linked_file.color);
+            linked_file.indicator = get_indicator(linked_file.permission);
 
-                print_name(linked_file, options);
-            }
+            print_name(linked_file, options);
+        }
 
         printf("\n");
     }
@@ -368,10 +366,11 @@ typedef struct
 
 #define MIN_COLUMN_WIDTH 3 // 1 char + 2 spaces
 
-static int get_column_count(column_info *column_configs, file_info *files, int file_count, int line_length, bool quotes, bool ind)
+static int get_column_count(column_info *column_configs, file_info *files, int file_count, widths_t *widths, options_t *options)
 {
-    int max_idx = line_length / MIN_COLUMN_WIDTH - 1;
+    int max_idx = widths->window_width / MIN_COLUMN_WIDTH - 1;
     int max_cols = (max_idx < file_count) ? max_idx : file_count;
+    int inode = (options->show_inode) ? widths->inode_width : 0;
 
     for (int file_idx = 0; file_idx < file_count; ++file_idx)
     {
@@ -388,15 +387,18 @@ static int get_column_count(column_info *column_configs, file_info *files, int f
                 column_configs[config_idx].valid = 0;
                 continue;
             }
-            
+
             // find file column
             int col = file_idx / rows;
 
             int name_width = strlen(files[file_idx].name);
-            if (quotes)
+
+            if (options->inside_quotes)
                 name_width += 2;
 
-            if (ind && files[file_idx].indicator)
+            if (options->append_file_indicators && files[file_idx].indicator)
+                name_width += 1;
+            else if (options->append_file_indicators && files[file_idx].permission[0] == 'd')
                 name_width += 1;
 
             // Check if the file name width exceeds the current column width
@@ -407,7 +409,7 @@ static int get_column_count(column_info *column_configs, file_info *files, int f
             }
 
             // Consider spaces as well
-            if (column_configs[config_idx].line_len + (2 * config_idx) > line_length)
+            if (column_configs[config_idx].line_len + (2 * config_idx) + (inode * (config_idx + 1)) > widths->window_width)
                 column_configs[config_idx].valid = 0;
         }
     }
@@ -425,28 +427,28 @@ print_tabular(file_info *files, int file_count, options_t *options, widths_t *wi
 {
     column_info column_configs[256] = {[0 ... 255] = {1, 0, 0, 0}};
 
-    int ncols = get_column_count(column_configs, files, file_count, widths->window_width, options->inside_quotes, options->append_file_indicators);
+    int ncols = get_column_count(column_configs, files, file_count, widths, options);
     int nrows = (file_count + ncols - 1) / ncols;
 
     for (int i = 0; i < nrows; i++)
     {
         for (int j = 0; j < ncols; j++)
         {
-
             int file_idx = i + j * nrows;
-            if (file_idx < file_count)
-            {
-                print_padded_name(files[file_idx], options, column_configs[ncols - 1].max_len[j]);
-                if (j < ncols - 1)
-                    printf("  ");
-            }
+
+            if (options->show_inode)
+                printf("%*d ", widths->inode_width, files[file_idx].st_ino);
+
+            print_padded_name(files[file_idx], options, column_configs[ncols - 1].max_len[j]);
+            if (j < ncols - 1)
+                printf("  ");
         }
         printf("\n");
     }
 }
 ```
 
-We iterate through every file, with every possible column configuration. For each column configuration, we find its total line length, and maximum length of each column. If at some point, the line length of configuration exceeds window length, we set it invalid. At the end of iterations, we find the configuration with highest column count, which is, of course, valid.
+We iterate through every file, with every possible column configuration. For each column configuration, we find its total line length (including spaces, and inode, if needed), and maximum length of each column. If at some point, the line length of configuration exceeds window length, we set it invalid. At the end of iterations, we find the configuration with highest column count, which is, of course, valid.
 
 **NOTE:** We also need to be sure that, configuration has widths for each column, i.e. no column is empty, as, it is possible to have 19-column configuration, and fill only 16. Thus, we check the number of allocated spaces vs total files, and if it is too much, we set configuration invalid. We have the following output:
 
@@ -473,10 +475,11 @@ void test_ls_flags(void)
         "-l",
         "-A",
         "-lA",
-        "-gu",
+        "-gtu",
         "-qpu",
+        "-FQ",
+        "-i",
     }; // list of flags to test
-
     char *original_ls_flags[] = {
         "--format=commas",
         "",
@@ -485,7 +488,8 @@ void test_ls_flags(void)
         "",
         "",
         "--format=across",
-        "",
+        "--format=across",
+        "--format=across",
     };
 
     char error_msg[100];
@@ -517,10 +521,10 @@ void test_ls_flags(void)
 }
 ```
 
-Consider that, we just give flags in array, and test all of them in loop with original `ls` command. By default, `ls` does not show colors, when used with pipe, so we use `--color=always` to have comparision with colors. Moreover, the separator symbol in `ls` also changes when used with pipe. For example, even though `ls` will produce columnwise output in shell, if used in pipe, the files will be separated by `\n` character, instead of double space. To handle this, we also force `ls` format, depending on command we are using. Overall, our result is:
+Consider that, we just give flags in array, and test all of them in loop with original `ls` command. By default, `ls` does not show colors, when used with pipe, so we use `--color=always` to have comparision with colors. Moreover, the separator symbol in `ls` also changes when used with pipe. For example, even though `ls` will produce columnwise output in shell, if used in pipe, the files will be separated by `\n` character, instead of double space. To handle this, we also force `ls` format (`across` for tabular, `comma` for comma separated), depending on command we are using. Overall, our result is:
 
 ![Output of tests](test_output.png)
 
 ## Conclusion
 
-THAT'S IT. We are done with journey, it was exhausting, but really fun one. I really enjoyed while working on it, and learned new things as well. I know, I missed some flags (such as `-h`, `-R` etc.), and my code might have some gaps or bugs. My [repository](https://github.com/Miradils-Blog/linux-ls/) is open for PRs, if you have suggestions, you are welcome to contribute. I am finishing series here, but I might return to this project to finish the other flag as well, maybe, sometime in the future. Thank you for being a part of this long journey!
+THAT'S IT. We are done with journey, it was exhausting, but really fun one. I really enjoyed while working on it, and learned new things as well. I know, I missed some flags (such as `-h`, `-R`, `-d` etc.), and my code might have some gaps or bugs. My [repository](https://github.com/Miradils-Blog/linux-ls/) is open for PRs, if you have suggestions, you are welcome to contribute. I am finishing series here, but I might return to this project to finish the other flag as well, maybe, sometime in the future. Thank you for being a part of this long journey!
