@@ -156,8 +156,6 @@ As we have all the flags processed, we already know by which factor we will sort
 ```C
 void sort(file_info *files, int count, options_t *options)
 {
-    if 
-
     int (*cmp_func)(const void *, const void *);
 
     switch (options->sort_by)
@@ -169,59 +167,55 @@ void sort(file_info *files, int count, options_t *options)
         cmp_func = (!options->reverse_sort) ? cmp_alphabetical_ext_asc : cmp_alphabetical_ext_desc;
         break;
     case BY_ACCESS_TIME:
-        cmp_func = (!options->reverse_sort) ? cmp_atime_asc : cmp_atime_desc;
+        cmp_func = (!options->reverse_sort) ? cmp_atime_desc : cmp_atime_asc;
         break;
     case BY_CHANGE_TIME:
-        cmp_func = (!options->reverse_sort) ? cmp_ctime_asc : cmp_ctime_desc;
+        cmp_func = (!options->reverse_sort) ? cmp_ctime_desc : cmp_ctime_asc;
         break;
     case BY_MODIFICATION_TIME:
-        cmp_func = (!options->reverse_sort) ? cmp_mtime_asc : cmp_mtime_desc;
+        cmp_func = (!options->reverse_sort) ? cmp_mtime_desc : cmp_mtime_asc;
         break;
     case BY_SIZE:
         cmp_func = (!options->reverse_sort) ? cmp_size_asc : cmp_size_desc;
         break;
     default:
-        return;  // No sorting
+        return;
     }
 
     qsort(files, count, sizeof(file_info), cmp_func);
 }
 ```
 
-We have created pointer to comparator function in the beginning of function, and assigned it to needed comparator depending on sort flags. Then, we call `qsort` function with comparator, and sort files in expected order. The comparators are all the same, each comparing with different field of struct:
+We have created pointer to comparator function in the beginning of function, and assigned it to needed comparator depending on sort flags. Then, we call `qsort` function with comparator, and sort files in expected order. Note that, time based comparators are reversed: that is because, we need to show newest first, by default. The comparators are all the same, each comparing with different field of struct:
 
 ```C
 static int cmp_alphabetical_asc(const void *a, const void *b)
 {
-    char *name1 = ((file_info *)a)->name;
-    char *name2 = ((file_info *)b)->name;
+    char *name1 = ((file_info *)a)->alphanum_name;
+    char *name2 = ((file_info *)b)->alphanum_name;
 
-    while (*name1 == '.')
-        ++name1;
+    int len_cmp = strlen(((file_info *)a)->name) - strlen(((file_info *)b)->name);
+    if (strlen(name1) || strlen(name2))
+        len_cmp = -len_cmp;
 
-    while (*name2 == '.')
-        ++name2;
-
-    return strcmp(name1, name2) ?: (strlen(((file_info *)a)->name) - strlen(((file_info *)b)->name));
+    return strcasecmp(name1, name2) ?: len_cmp;
 }
 static int cmp_alphabetical_desc(const void *a, const void *b) 
 { 
     return -cmp_alphabetical_asc(a, b); 
 }
 
-static int cmp_atime_asc(const void *a, const void *b)
+static int cmp_atime_desc(const void *a, const void *b)
 {
-    return ((file_info *)a)->st_atime - ((file_info *)b)->st_atime;
+    return (((file_info *)b)->st_atime - ((file_info *)a)->st_atime) ?: cmp_alphabetical_asc(a, b);
 }
-static int cmp_atime_desc(const void *a, const void *b) 
-{ 
-    return -cmp_atime_asc(a, b); 
-}
+static int cmp_atime_asc(const void *a, const void *b) { return -cmp_atime_asc(a, b); }
+
 
 // The rest of comparators
 ```
 
-As it was shown above, we have comparators for each field, both for ascending and descending sort. Note that, descending comparators are just inverse/negative of ascending comparators.
+As it was shown above, we have comparators for each field, both for ascending and descending sort. Note that, descending comparators are just inverse/negative of ascending comparators. For comparators of time (atime, ctime and mtime) we need second comparator as well, in case time values are the same, so we use alphabetical comparator.
 
 #### IMPORTANT NOTE ABOUT NAME COMPARATOR
 
