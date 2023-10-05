@@ -5,7 +5,7 @@ description: "How to detect field changes in Django"
 menu:
   sidebar:
     name: "How did I get into programming?"
-    identifier: how_did_i_get_into_prog
+    identifier: how-did-i-get-into-prog
     parent: misc
     weight: 10
 
