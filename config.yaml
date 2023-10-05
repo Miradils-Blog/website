@@ -122,22 +122,22 @@ params:
           shortName: mmzeynalli
 
     # Enable Analytics
-    # analytics:
-    #   enabled: true
-    #   services:
-    #     # Google Analytics
-    #     google:
-    #       id: G-H4LBG7NDFZ
-    # # CounterDev
-    # counterDev:
-    #   id: <your counterdev id>
-    # GoatCounter
-    goatCounter:
-      code: mmzeynalli
-    # # Matomo / Piwik
-    # matomo:
-    #   instance: matomo.example.com
-    #   siteId: 1 # Or any other number
+    analytics:
+      enabled: true
+      services:
+        # Google Analytics
+        # google:
+        #   id: G-H4LBG7NDFZ
+        # CounterDev
+        # counterDev:
+        #   id: <your counterdev id>
+        # GoatCounter
+        goatCounter:
+          code: mmzeynalli
+        # Matomo / Piwik
+        # matomo:
+        #   instance: matomo.example.com
+        #   siteId: 1 # Or any other number
 
     # Enable Support
     support:
