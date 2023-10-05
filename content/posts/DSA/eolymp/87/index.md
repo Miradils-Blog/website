@@ -9,7 +9,7 @@ menu:
     parent: eolymp
     weight: 87
 
-tags: ["DSA", "Easy"]
+tags: ["DSA", "Eolymp", "Easy"]
 categories: ["DSA"]
 ---
 
