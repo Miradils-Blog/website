@@ -16,7 +16,7 @@ categories: ["HowTo", "DSA", "Roadmap"]
 
 ## Introduction
 
-I started my bachelors in 2015 in [ADA University](https://ada.edu.az/). Back in my time (now it has changed), we started our first programming course with Java. I did not grasp some of the concepts, as I was not wise enough to practice and play around with codes that professor shared, even though he stressed that point a lot. Despite the fact that I understood all of the theory, when it came to implementation, I hesitated a lot, without knowing how to progress.
+I started my Computer Engineering bachelors in 2015 in [ADA University](https://ada.edu.az/). Back in my time, we started our first programming course with Java. I did not grasp some of the concepts, as I was not wise enough to practice and play around with codes that professor shared, even though he stressed that point a lot. Despite the fact that I understood all of the theory, when it came to implementation, I hesitated a lot, without knowing how to progress.
 
 In my second semester, I got to learn C from different professor. His curriculum for course was based on [eolymp](https://www.eolymp.com/en/) (he was one of the builders of this platform): he would explain the topic, and would provide problems from this website for us to solve. There was a little problem though: it was not enough. The tasks were easy for me, and I did them really fast. I wanted more, but I couldn't have rushed the class, could I?
 
