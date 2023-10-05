@@ -1,13 +1,13 @@
 {{ define "header" }}
 <meta name="description"
-    content="{{ if .Description }}{{ .Parent.Title }}: {{.Description }}{{ else }}{{ .Title }}{{ end }}" />
+    content="{{ if .Description }}{{ if .Params.series }}{{ .Parent.Title }}: {{ end }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
 
 <meta data-rh="true" property="og:url" content="https://mmzeynalli.dev" />
 <meta data-rh="true" property="og:type" content="website" />
 <meta data-rh="true" property="og:site_name" content="Miradil's Blog" />
-<meta data-rh="true" property="og:title" content="{{ .Parent.Title }}: {{.Page.Title}}" />
+<meta data-rh="true" property="og:title" content="{{ if .Params.series }}{{ .Parent.Title }}: {{end}}{{.Page.Title}}" />
 <meta data-rh="true" property="og:description"
-    content="{{ if .Description }}{{ .Parent.Title }}: {{.Description }}{{ else }}{{ .Title }}{{ end }}" />
+    content="{{ if .Description }}{{ if .Params.series }}{{ .Parent.Title }}: {{ end }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
 <meta data-rh="true" property="og:image" content="{{ partial "helpers/get-hero.html" . }}" />
 
 {{ end }}
