@@ -20,7 +20,7 @@ I started my bachelors in 2015 in [ADA University](https://ada.edu.az/). Back in
 
 In my second semester, I got to learn C from different professor. His curriculum for course was based on [eolymp](https://www.eolymp.com/en/) (he was one of the builders of this platform): he would explain the topic, and would provide problems from this website for us to solve. There was a little problem though: it was not enough. The tasks were easy for me, and I did them really fast. I wanted more, but I couldn't have rushed the class, could I?
 
-<figure style="border-style=none">
+<figure style="border: none;">
     {{< img src="eolymp.png" width=200 height=200 align="center" title="Eolymp Logo">}}
     <figcaption>Eolymp Logo</figcaption>
 </figure>
@@ -35,7 +35,7 @@ During Nowruz holiday (for those who don't know, we celebrate a spring-coming in
 
 In the end of the semester, there was a countrywide competition for university teams. The top teams of each university would have been sponsored to ACM ICPC regionals contest. Me and my team joined to that tournament, while being the first year students (the other teams of our university were all our seniors). We were stuck after solving only 2 problems. However, in the last 10 minutes, we were able to make comeback with 2 more solves, which granted us 8th place (3rd out of 4 from our university). Even though it is not a big achievement, but as a first experience, I believe we did good. University even sponsored us to another tournament, which was held in Georgia. After these, I started regularly solving DSA questions and participate in ACM ICPC competitions. This way, I was able to get to know and practice C as much as I could, which later helped me a lot when I started career in embedded firmware engineering.
 
-<figure style="border-style=none">
+<figure style="border: none;">
     {{< img src="icpc.png" width=200 height=200 align="center" title="ICPC Logo">}}
     <figcaption>ACM ICPC Logo</figcaption>
 </figure>
