@@ -1,7 +1,7 @@
 ---
 title: "How did I get into programming and developed my skills?"
 date: 2023-10-05T17:30:00+02:00
-description: "How to detect field changes in Django"
+description: "How I started my journey"
 menu:
   sidebar:
     name: "How did I get into programming?"
