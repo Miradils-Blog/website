@@ -139,4 +139,4 @@ As leftmost is non-positive, subtracting it means adding its absolute value. For
 
 {{< vs 2 >}}
 
-A big fat A+! We have also used less resources than 99% of submissions. Yay!
+A big fat A+! We have also used less resources than 99% of submissions. Yay! You can access the code [here](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/eolymp/87-robot). Feel free to contribute your solution in different language!
