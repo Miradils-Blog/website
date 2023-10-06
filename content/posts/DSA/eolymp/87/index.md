@@ -20,7 +20,7 @@ The infinite in both directions stripe with width **1** is divided into blocks o
 
 {{< img src="problem_image.jpg" align="center" title="Problem Statement Image">}}
 
-{{< vs 2 >}}
+{{< vs 1 >}}
 
 Write a program that will determine how many different cells visits the robot.
 
@@ -81,7 +81,7 @@ int main(void) {
             --ind;
     }
 
-    printf("%d", ind + 1);  // consider initial position
+    printf("%d\n", ind + 1);  // consider initial position
 
     return 0;
 }
@@ -89,7 +89,7 @@ int main(void) {
 
 The problem is that, this method works with given solution (output is indeed 6), but if in some substring, number of Ls are more than number of Rs (let's say, our input is as RRRRLLLLRR), then the solution fails:
 
-<!-- IMAGE HERE FOR CASES -->
+![Wrong solution](false_output.png)
 
 Instead, we have to tackle problem differently: as it is 1x1 dimesion, we can set the leftmost and the rightmost position the robot has been as the border.
 
@@ -132,6 +132,12 @@ int main()
 {{< vs 2 >}}
 
 As leftmost is non-positive, subtracting it means adding its absolute value. For this solution we get the output:
+
+![Correct solution](correct_output.png)
+
+{{< vs 2 >}}
+
+And if we submit this:
 
 {{< vs 2 >}}
 
