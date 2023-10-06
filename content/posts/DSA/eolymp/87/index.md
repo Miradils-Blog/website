@@ -91,7 +91,7 @@ The problem is that, this method works with given solution (output is indeed 6),
 
 ![Wrong solution](false_output.png)
 
-Instead, we have to tackle problem differently: as it is 1x1 dimesion, we can set the leftmost and the rightmost position the robot has been as the border.
+Instead, we have to tackle problem differently: as it is 1x1 dimension, we can set the leftmost and the rightmost position the robot has been as the border.
 
 {{< img src="result2.png" align="center" title="Problem Input Result 2">}}
 
