@@ -52,7 +52,9 @@ RRSRRLRR
 
 {{< /split >}}
 
-## Solution
+<hr>
+
+## [Solution](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/eolymp/87-robot)
 
 Let's first analyze how the input works. If we run the input sequence, we will have the following result:
 
