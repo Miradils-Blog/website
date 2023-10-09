@@ -12,6 +12,7 @@
 
 {{ end }}
 
+
 {{ define "navbar" }}
 {{ partial "navigators/navbar-2.html" . }}
 {{ end }}
@@ -225,4 +226,9 @@
     </div>
     {{ end }}
 </section>
+
+{{ if .Params.math }}
+    {{ partial "math.html" . }}
+{{ end }}
+
 {{ end }}
