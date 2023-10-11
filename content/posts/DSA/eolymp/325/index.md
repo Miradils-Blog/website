@@ -1,6 +1,6 @@
 ---
 title: "325: Dangerous route"
-date: 2023-10-011T12:00:00+02:00
+date: 2023-10-11T13:00:00+02:00
 description: "Solving Eolymp Problem 325: Dangerous route"
 menu:
   sidebar:
