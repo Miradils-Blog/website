@@ -77,7 +77,7 @@ One integer - the danger of the most safe route.
 
 The first algorithm that can come to mind is to use DFS or BFS, however, in those algorithms, you would have a hard time to keep track of route (and the graph can be circular, which makes things harder) and the maximum danger in that route. As the problem implies, we need to take the least dangerous way, in which the least is defined by maximum danger on the trip. So, we can sort the nodes based on their danger level, and then traverse the nodes until we find our destination.
 
-This type of problems are usually solved with **disjoint set** data structure. We are going to view each node as different set, and then, merge these sets, until we connect **1** to **n**. For each set, we are going to remember the parent/representative of each node in that set. In the beginning, each node is parent of itself.
+This type of problems is usually solved with **disjoint set** data structure. We are going to view each node as different set, and then, merge these sets, until we connect **1** to **n**. For each set, we are going to remember the parent/representative of each node in that set. In the beginning, each node is parent of itself.
 
 ```C
 int parent[MAX];
@@ -200,7 +200,7 @@ int main()
 
 ```
 
-AND THE RESULT IS:
+AND THE EXPECTED RESULT IS:
 
 ![Submission Result 2](submission_result1.png)
 
@@ -221,12 +221,12 @@ struct edge
 
 vector<int> parent;
 
-int repr(int v)
+int repr(int node)
 {
-    if (v == parent[v])
-        return v;
+    if (node == parent[node])
+        return node;
 
-    return parent[v] = repr(parent[v]);
+    return parent[node] = repr(parent[node]);
 }
 
 void unite(int x, int y)
@@ -240,16 +240,12 @@ void unite(int x, int y)
 
 int f(edge a, edge b)
 {
-
     return a.danger < b.danger;
 }
 
 int main()
 {
-
-    int n, m, a, b, danger, i;
-    setvbuf(stdout, NULL, _IONBF, 0);
-
+    int n, m, i;
     scanf("%d %d", &n, &m);
 
     parent.resize(n + 1);
@@ -267,12 +263,10 @@ int main()
         unite(edges[i].x, edges[i].y);
 
         if (repr(1) == repr(n))
-        {
-            printf("%d\n", edges[i].danger);
             break;
-        }
     }
 
+    printf("%d\n", edges[i].danger);
     return 0;
 }
 ```
