@@ -5,5 +5,5 @@ menu:
     name: LeetCode
     identifier: leetcode
     parent: dsa
-    weight: 10
+    weight: 20
 ---

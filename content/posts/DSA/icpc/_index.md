@@ -5,5 +5,5 @@ menu:
     name: ICPC
     identifier: icpc
     parent: dsa
-    weight: 20
+    weight: 10
 ---

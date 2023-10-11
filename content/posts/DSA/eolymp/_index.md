@@ -5,5 +5,5 @@ menu:
     name: Eolymp
     identifier: eolymp
     parent: dsa
-    weight: 20
+    weight: 30
 ---
