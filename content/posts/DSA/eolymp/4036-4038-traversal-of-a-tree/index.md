@@ -58,7 +58,7 @@ The first line contains number n (**1** $\leq$ **n** $\leq$ **100**). The second
 
 #### Output data
 
-Create the Binary Search Tree from input data. Print the vertices of a tree according to pre-order traversal.
+Create the Binary Search Tree from input data. Print the vertices of a tree according to post-order traversal.
 
 #### Examples
 
