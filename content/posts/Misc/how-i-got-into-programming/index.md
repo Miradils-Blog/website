@@ -9,6 +9,8 @@ menu:
     parent: misc
     weight: 10
 
+aliases:
+    - how_i_got_into_c
 tags: ["Programming", "ForBeginners", "HowTo", "Roadmap"]
 categories: ["HowTo", "DSA", "Roadmap"]
 ---
