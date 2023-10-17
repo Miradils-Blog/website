@@ -24,9 +24,9 @@ languages:
   en:
     languageName: English
     weight: 1
-  # az:
-  #   languageName: Azerbaijani
-  #   weight: 1
+  az:
+    languageName: Azərbaycanca
+    weight: 2
 
 # Control TOC depth
 markup:
