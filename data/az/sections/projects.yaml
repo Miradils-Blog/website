@@ -1,0 +1,65 @@
+# section information
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+  - name: All
+    filter: "all"
+  - name: Professional
+    filter: "professional"
+  - name: Academic
+    filter: "academic"
+  - name: Hobby
+    filter: "hobby"
+
+# your projects
+projects:
+  - name: 5-stage RISC-V processor
+    logo: /images/sections/projects/riscv.png
+    role: Contributor
+    timeline: "Mar 2023 - Present"
+    repo: https://github.com/mmzeynalli/RISC-V
+    summary: A simple 32-bit 5-stage RISC-V processor in SystemVerilog based on the book Computer Organization and Design by Patterson & Hennesy.
+    tags: ["academic", "riscv", "systemverilog"]
+
+  - name: Kibrit 3G
+    role: Developer
+    timeline: "Mar 2020 - May 2021"
+    summary:
+      Star network of low-power MCUs connected to host gateway via LoRaWAN.
+      Gateway is connected to 3G network with SIM5300E 3G module
+    tags: ["professional", "sim", "3G", "stm32", "lora"]
+
+  - name: Smart LED Display v2
+    logo: /images/sections/projects/customs.png
+    role: Developer
+    timeline: "Mar - Aug 2020"
+    summary:
+      Extension of control for P10 displays using BeagleBone Black. Also comes with Java Desktop software
+      to generate new fonts if needed, for Azerbaijani alpahabet
+    tags: ["professional", "beagleboneblack", "bbb", "atmega", "led", "java"]
+
+  - name: AQI
+    logo: /images/sections/projects/bna.png
+    role: Lead
+    timeline: "Oct 2019 - Feb 2020"
+    summary:
+      A device to detect air quality index by 14 factors (noise, dust, co2 level etc.)
+      for Baku Transportation Agency
+    tags:
+      ["professional", "hpma115s0", "qmc5883l", "dht22", "stm32", "air-quality"]
+
+  - name: Optioptiboot
+    repo: https://github.com/mmzeynalli/optioptiboot
+    role: Owner
+    timeline: "Oct 2020 - Halted"
+    summary: Optimized version of optiboot, to suppport external flashing,
+      enabling OTA update for any communication mean.
+    tags: ["hobby", "atmega", "bootloader"]

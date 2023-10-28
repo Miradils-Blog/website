@@ -1,0 +1,30 @@
+# some information about you
+name: "Miradil Zeynalli"
+nickname: "Miradil"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+image: "images/author/profile.jpg"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "miradil.zeynalli@gmail.com"
+  telegram:
+    icon: telegram
+    url: "https://telegram.me/mmzeynalli"
+    text: "@mmzeynalli"
+  medium: 
+    icon: medium
+    url: https://medium.com/@mmzeynalli
+    text: "@mmzeynalli" 
+  linkedin: miradil-zeynalli
+  github: mmzeynalli
+  stack-overflow:
+    icon: stack-overflow
+    url: "https://stackoverflow.com/users/8842262/miradil-zeynalli"
+    text: "Miradil Zeynalli"
+
+# some summary about what you do
+summary:
+  - I am a Software Developer with rubber duck for debugging purposes
+  - I am an Engineer
+  - I love C
+  - I love to challenge myself

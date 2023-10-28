@@ -1,0 +1,63 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Platform Security Engineer
+# your company information
+company:
+  name: Axis Communications
+  url: "https://www.axis.com"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/Miradil Zeynalli [CV].pdf"
+
+# a summary about you
+summary:
+  "I am a passionate software engineer with 5+ years of working experience. \
+  I have worked as Embedded Software Developer for 3.5 years and more than 1 year as Python Django Developer. \
+  Also worked remote projects both as Embedded and Web developer.
+
+
+  ⚡ Fun facts  \n
+
+  Favorite movies: The Dark Knight, 12 Angry Men  \n
+  Favorite actors: Morgan Freeman, Ryan Reynolds  \n
+  Favorite author: Dan Brown  \n
+  Favorite book: The Da Vinci Code  \n
+  Favorite sports: Chess, Basketball, Volleyball"
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+  - name: Email
+    icon: "fas fa-envelope"
+    url: "miradil.zeynalli@gmail.com"
+  - name: LinkedIn
+    icon: "fab fa-linkedin"
+    url: "https://www.linkedin.com/in/miradil-zeynalli/"
+  - name: Github
+    icon: "fab fa-github"
+    url: "https://www.github.com/mmzeynalli"
+  - name: StackOverflow
+    icon: "fab fa-stack-overflow"
+    url: "https://stackoverflow.com/users/8842262/miradil-zeynalli"
+
+# your soft skills
+# give the percentage between 50 to 100 with 5 intervals.
+# currently supported colors: blue, yellow, pink, green, sky, orange
+softSkills:
+  - name: Leadership & Team Work
+    percentage: 90
+    color: blue
+  - name: Public Speaking
+    percentage: 95
+    color: "#ff0000"
+  - name: Adaptibility
+    percentage: 100
+    color: green

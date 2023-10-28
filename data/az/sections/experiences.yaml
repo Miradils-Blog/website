@@ -1,0 +1,63 @@
+# section information
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your experiences
+experiences:
+  - company:
+      name: Axis Communications
+      url: "https://www.axis.com"
+      location: Lund, Sweden
+      # company overview
+      overview: Axis Communications is specialized in network cameras, especially for security.
+    positions:
+      - designation: Platform Security Engineer
+        start: Mar 2023
+        # don't provide end date if you are currently working there. It will be replaced by "Present"
+        # end: Dec 2020
+        # give some points about what was your responsibilities at the company.
+        responsibilities:
+          - Getting into kernel level functions and handling memory access.
+          - Writing unit tests for newly added functionalities.
+          - Working with OTP memories and manipulating them.
+
+  - company:
+      name: Starex
+      url: "https://starex.az"
+      location: Baku, Azerbaijan
+      overview:
+        Starex is logistics company, which ships declarations from the USA, China and Turkey
+        for both individuals and businesses.
+    positions:
+      - designation: Lead Python Django Developer
+        start: Jun 2021
+        end: Aug 2022
+        responsibilities:
+          - Led team of 3 backend, 1 frontend and 1 mobile developers.
+          - Maintained legacy code.
+          - Refactored parts of the code, to increase scalability.
+          - Integrated payment system.
+          - Configured ELK + Filebeat stack for logging.
+          - Documented and wrote test units for project, dramatically decreasing total count of bugs
+
+  - company:
+      name: Sumaks Technologies
+      url: "https://sumaks.az"
+      location: Baku, Azerbaijan
+      overview:
+        Sumaks is a friendly team which specializes in hardware and firmware. Schematic,
+        PCB design and assembly and firmware development was done resulting in localized product.
+    positions:
+      - designation: Senior Embedded Software Developer
+        start: Nov 2017
+        end: Jun 2021
+        responsibilities:
+          - Worked on developing library for sensors and modules.
+          - Updated old codes to more optimal and secure versions.
+          - Researched solutions to reduce overall cost of project, including OTA, MQTT, LoRaWAN.
