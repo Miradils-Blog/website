@@ -1,10 +1,10 @@
 ---
-title: "Web developmentə necə keçid etdim?"
+title: "Necə iki saat ərzində təklif alıb, müsahibədən keçib, işə qəbul oldum"
 date: 2023-10-17T16:00:00+02:00
 description: "Necə embeddeddən web-ə keçdim və Starexdə işə başladım"
 menu:
   sidebar:
-    name: "Web developmentə necə keçid etdim?"
+    name: "Necə iki saat ərzində işə qəbul oldum"
     identifier: webə-nece-keçdim
     parent: misc
     weight: 20
@@ -15,7 +15,7 @@ categories: ["webdevelpment", "interviewstories"]
 
 ## Giriş
 
-Mən 2017-ci ildən Sumaks Technologies şirkətində intern kimi işə başladım. Orada ümumilikdə 3.5 il (intern, freelancer, part-time və universiteti bitirəndən sonra full-time) işlədim. Sumaks-daf uzun müddət işlədikdən sonra, artıq öyrənmə limitimə çatdığımı anladım. Baxmayaq ki bu komanda mənə çox təcrübə qazandırdı, (buna görə Sumaks komandasına həmişə minnətdaram) artıq yeni "challenge" axtarmaq zamanı gəlmişdi. Fərqli yerlərə/vakansiyalara apply etsəm də, intervyulara girsəm də, tutarlı bir şey yox idi.
+Mən 2017-ci ildən Sumaks Technologies şirkətində intern kimi işə başladım. Orada ümumilikdə 3.5 il (intern, freelancer, part-time və universiteti bitirəndən sonra full-time) işlədim. Sumaks-dan uzun müddət işlədikdən sonra, artıq öyrənmə limitimə çatdığımı anladım. Baxmayaq ki bu komanda mənə çox təcrübə qazandırdı, (buna görə Sumaks komandasına həmişə minnətdaram) artıq yeni "challenge" axtarmaq zamanı gəlmişdi. Fərqli yerlərə/vakansiyalara apply etsəm də, intervyulara girsəm də, tutarlı bir şey yox idi.
 
 ### Əlavə kontekts üçün
 
@@ -37,7 +37,7 @@ Bu anda, türklər demiş, “ben şok, ben iptal”. **Mən, iki saatın içind
 
 ## Yeni Başlanğıc
 
-İlk ayım gözlənildiyi kimi çox çətin keçdi, çünki həm Django həm də mövcud kod bazasını öyrənirdim. Həmçinin kiçik komanda mühitindən, böyük korperative mühitə keçmişdim. İlk həftə hər gün evə qayıdanda başım ağrayırdı. Amma üç il yarımlıq təcrübəm məni bütün texniki problemləri çözməyimə çox kömək etdi: Django öyrənməyi rahat bacardım, çünki, Sumaksdakı illərimdə yeni texnologiyanı öyrənməyi öyrənmişdim (özü də C-də işləyirdim əvvəl, Pythonda yeni nəsə öyrənməyə nə var ki 😁), kod bazasını da yavaş yavaş anladım, çünki, probleblemlərə yanaşmam formulam artıq var idi.
+İlk ayım gözlənildiyi kimi çox çətin keçdi, çünki həm Django həm də mövcud kod bazasını öyrənirdim. Həmçinin kiçik komanda mühitindən, böyük korperative mühitə keçmişdim. İlk həftə hər gün evə qayıdanda başım ağrayırdı. Amma üç il yarımlıq təcrübəm məni bütün texniki problemləri çözməyimə çox kömək etdi: Django öyrənməyi rahat bacardım, çünki, Sumaksdakı illərimdə yeni texnologiyanı öyrənməyi öyrənmişdim (özü də C-də işləyirdim əvvəl, Pythonda yeni nəsə öyrənməyə nə var ki 😁), kod bazasını da yavaş yavaş anladım, çünki, problemlərə yanaşmam formulam artıq var idi.
 
 Əlbəttə ki, komandama da çox böyük təşəkkür düşür, onlar mən sürət yığana, öyrənib öyrəşənə qədər əsas tapşırıqları öz üzərinə götürürdülər. Product Owner-imiz də səbrli idi, mənim axına düşməyimə mümkün qədər şərait yaratdı. Bütün bunların sayəsində, artıq təxmini ikinci ayın sonunda, lead kimi lead ola bildim və komandamı irəli aparmağa başladım. Dördüncü ayımda intern belə verildi mənə.
 

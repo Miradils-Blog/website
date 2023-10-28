@@ -1,5 +1,5 @@
 ---
-title: "How did I switch to Web Development?"
+title: "How I got offer, interviewed and received a job all in 2 hours"
 date: 2023-10-15T15:30:00+02:00
 description: "How I started my journey"
 menu:
