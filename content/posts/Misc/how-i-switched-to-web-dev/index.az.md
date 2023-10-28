@@ -15,7 +15,7 @@ categories: ["webdevelpment", "interviewstories"]
 
 ## Giriş
 
-Mən 2017-ci ildən Sumaks Technologies şirkətində intern kimi işə başladım. Orada ümumilikdə 3.5 il (intern, freelancer, part-time və universiteti bitirəndən sonra full-time) işlədim. Sumaks-dan uzun müddət işlədikdən sonra, artıq öyrənmə limitimə çatdığımı anladım. Baxmayaq ki bu komanda mənə çox təcrübə qazandırdı, (buna görə Sumaks komandasına həmişə minnətdaram) artıq yeni "challenge" axtarmaq zamanı gəlmişdi. Fərqli yerlərə/vakansiyalara apply etsəm də, intervyulara girsəm də, tutarlı bir şey yox idi.
+Mən 2017-ci ildən Sumaks Technologies şirkətində intern kimi işə başladım. Orada ümumilikdə 3.5 il (intern, freelancer, part-time və universiteti bitirəndən sonra full-time) işlədim. Sumaks-da uzun müddət işlədikdən sonra, artıq öyrənmə limitimə çatdığımı anladım. Baxmayaq ki bu komanda mənə çox təcrübə qazandırdı, (buna görə Sumaks komandasına həmişə minnətdaram) artıq yeni "challenge" axtarmaq zamanı gəlmişdi. Fərqli yerlərə/vakansiyalara apply etsəm də, intervyulara girsəm də, tutarlı bir şey yox idi.
 
 ### Əlavə kontekts üçün
 
