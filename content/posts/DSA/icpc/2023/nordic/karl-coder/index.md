@@ -6,8 +6,11 @@ menu:
   sidebar:
     name: "Karl Coder"
     identifier: karl-coder
-    parent: icpc
-    weight: 87
+    parent: nordic
+    weight: 3
+
+aliases:
+    - /posts/dsa/icpc/karl-coder/
 
 tags: ["DSA", "ICPC", "Easy", "BinarySearch", "Interactive"]
 categories: ["DSA", "BinarySearch", "Interactive"]
@@ -49,7 +52,7 @@ It is guaranteed that $ 2 \leq N \leq 10^{18} $.
 
 <hr>
 
-## [Solution](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/icpc/The2023NordicCollegiateProgrammingContest/KarlCoder)
+## [Solution](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/icpc/2023/The2023NordicCollegiateProgrammingContest/KarlCoder)
 
 This is a little bit different kind of problem. We do not have any input, but we can interact with program. As indicated in problem, we cannot do linear search, as we will hit request limit. We also cannot randomly query the data, as if we are out of bounds, we will get error message and end the program. So, we need a different approach. Let's do this in steps:
 
@@ -144,4 +147,4 @@ Seems like it works! It also took 4 steps, which is upper bound for us. So, if w
 
 ![Submission result](submission_result.png)
 
-Passed all 146 cases! Yay! You can access the code [here](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/icpc/The2023NordicCollegiateProgrammingContest/KarlCoder). Feel free to contribute your solution in different language!
+Passed all 146 cases! Yay! You can access the code [here](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/icpc/2023/The2023NordicCollegiateProgrammingContest/KarlCoder). Feel free to contribute your solution in different language!
