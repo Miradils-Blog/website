@@ -2,6 +2,7 @@
 title: "Processing flags"
 date: 2023-05-23T20:00:00+02:00
 description: "Processing flags"
+hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:
     name: "Processing flags"

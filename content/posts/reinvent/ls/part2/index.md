@@ -2,6 +2,7 @@
 title: "Starting with C"
 date: 2023-05-05T15:30:00+02:00
 description: "Starting with C"
+hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:
     name: "Starting with C"

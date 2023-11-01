@@ -2,6 +2,7 @@
 title: "Getting the list of files and their info"
 date: 2023-05-10T10:00:00+02:00
 description: "Getting the list of files and their info"
+hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:
     name: "Getting the list of files and their info"
@@ -375,7 +376,7 @@ Guess the output?
 
 **VS**  
 
-![Original ls output](original_ls.png)
+![Original ls output](original_ls.jpg)
 
 VOILA! Almost perfect output :)
 

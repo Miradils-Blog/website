@@ -2,6 +2,7 @@
 title: Classify The Roman Numerals
 date: 2023-10-28T14:00:00+01:00
 description: "Solving task C from \"Azerbaijan Qualification 2023\""
+hero: images/posts/dsa/icpc2023aze.png
 menu:
   sidebar:
     name: Classify The Roman Numerals

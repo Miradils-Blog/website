@@ -2,6 +2,7 @@
 title: "4036: Pre-Order Traversal of a Tree & 4038: Post-Order Traversal of a Tree"
 date: 2023-10-13T18:00:00+02:00
 description: "Solving Eolymp Problem 4036 & 4038: Pre-Order/Post-Order Traversal of a Tree"
+hero: images/posts/dsa/eolymp.png
 menu:
   sidebar:
     name: "4036 & 4038: Pre-Order/Post-Order Traversal of a Tree"

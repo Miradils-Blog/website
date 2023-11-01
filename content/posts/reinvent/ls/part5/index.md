@@ -2,6 +2,7 @@
 title: "Sorting and formatting the output"
 date: 2023-09-28T10:00:00+02:00
 description: "Sorting and formatting the output"
+hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:
     name: "Sorting and formatting the output"
