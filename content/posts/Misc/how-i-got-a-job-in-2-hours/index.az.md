@@ -11,6 +11,9 @@ menu:
 
 tags: ["Programming", "Web Development", "Django", "Interview Stories"]
 categories: ["webdevelpment", "interviewstories"]
+
+aliases:
+  - how-i-switched-to-web-dev
 ---
 
 ## Giriş

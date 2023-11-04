@@ -11,6 +11,9 @@ menu:
 
 tags: ["Programming", "Web Development", "Interview", "Roadmap"]
 categories: ["HowTo", "DSA", "Roadmap"]
+
+aliases:
+  - how-i-switched-to-web-dev
 ---
 
 Available only in Azerbaijani for now. Feel free to contribute by translating the article!
