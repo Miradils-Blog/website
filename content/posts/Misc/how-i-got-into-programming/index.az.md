@@ -15,6 +15,8 @@ tags: ["Programming", "ForBeginners", "HowTo", "Roadmap"]
 categories: ["HowTo", "DSA", "Roadmap"]
 ---
 
+> Bu postun ingiliscə tərcüməsi də vardır.
+
 ## Giriş
 
 2015ci ildə ADA univeristetində Komputer Mühəndisliyi üzrə bakalavr təhsilimə başlamışam. Mənim vaxtımda biz ilk programming kursuna Java ilə start verirdik. Professorum kodlarla "oynamağın", praktika etməyin vacib olduğunu dəfələrlə vurğulasa da, buna əhəmiyyət vermirdim və buna görə də bəzi konseptləri tam anlamırdım. Nəzəriyyədə hər şeyi anlasam da, tətbiq etməyə gəldikdə necə irəliləmək lazım olduğunu bilmədiyim üçün çox tərəddüd edirdim.
@@ -28,7 +30,7 @@ categories: ["HowTo", "DSA", "Roadmap"]
 
 ## İnkişaf
 
-Semestrin başlamağından bir neçə ay sonra mən eolympin hamıya açıq programming [marafonunu](https://www.eolymp.com/en/contests/6472) qabağıma çıxdı. Bu, hər həftə programming sualları paylaşılan "Qış Marafonu" idi və 2 liqada keçirilirdi: Junior və Senior liqaları. Mən hər həftə müxtəlif mövzulara aid 10-11 məsələ həll edirdim. Bu periodda nə zaman ilişsəm və ya problemi həll edə bilməsəm, professorum detallı izahlar verərək mənə dəstək olurdu. Nəticədə, bu marafon və professorumun köməyi ilə semestrın ortasında mən artıq semestr materialından da çoxunu mənimsəmişdim. Bunların hamısı universitetin məndən gözlədiyindən də çoxunu etdiyim üçün idi.
+Semestrin başlamağından bir neçə ay sonra mən eolymp-in hamıya açıq programming [marafonu](https://www.eolymp.com/en/contests/6472) qabağıma çıxdı. Bu, hər həftə programming sualları paylaşılan "Qış Marafonu" idi və 2 liqada keçirilirdi: Junior və Senior liqaları. Mən hər həftə müxtəlif mövzulara aid 10-11 məsələ həll edirdim. Bu periodda nə zaman ilişsəm və ya problemi həll edə bilməsəm, professorum detallı izahlar verərək mənə dəstək olurdu. Nəticədə, bu marafon və professorumun köməyi ilə semestrın ortasında mən artıq semestr materialından da çoxunu mənimsəmişdim. Bunların hamısı universitetin məndən gözlədiyindən də çoxunu etdiyim üçün idi.
 
 Novruz ərəfəsində yaxınlaşan ACM ICPC yarışına hazırlıq üçün təlim kampının (düşərgəsinin) təşkil olunacağını öyrəndim. Mənim C professorum da burada mentor olacağı üçün 6 nəfər (2 qrup) ADA tələbəsinin də kampa qoşulmasına icazə verilirdi. Hər kəs Novruz tətilində dincələrkən, mən hər gün 9.00-18.00 arası bu kampa getdim. Baxmayaraq ki, mövzular mənim üçün çox mürəkkəb idi, professorumuz bizə bu alqorirmlərin daha az kompleks versiyalarını başa salırdı. İnanıram ki, məhz bu hissədə mən artıq proqramlaşdırmaya bağlandım.
 

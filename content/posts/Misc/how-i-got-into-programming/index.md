@@ -15,6 +15,7 @@ tags: ["Programming", "ForBeginners", "HowTo", "Roadmap"]
 categories: ["HowTo", "DSA", "Roadmap"]
 ---
 
+> This post has Azerbaijani version.
 
 ## Introduction
 
