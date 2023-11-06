@@ -1,7 +1,7 @@
 ---
 title: "Proqramlaşdırmaya necə başladım və özümü necə inkişaf elətdirdim?"
 date: 2023-11-04T12:00:00+01:00
-description: "Proqlamşdırma səyahətimi necə başladım"
+description: "Proqramlaşdırma səyahətimi necə başladım"
 menu:
   sidebar:
     name: "Proqramlaşdırmaya necə başladım?"
