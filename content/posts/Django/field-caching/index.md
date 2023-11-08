@@ -1,6 +1,6 @@
 ---
 title: "How to detect field changes in Django"
-date: 2023-10-10T19:00:00+02:00
+date: 2023-08-11T14:30:00+01:00
 description: "How to detect field changes in Django"
 hero: images/posts/django.png
 menu:
@@ -12,7 +12,6 @@ menu:
 
 tags: ["Python", "Django", "Caching", "Backend"]
 categories: ["Python", "Django"]
-draft: true
 ---
 
 
@@ -89,7 +88,26 @@ def register_status_change(sender, instance: Package, **kwargs):
 
 If we check:
 
-![Try #1](output1.png)
+```python
+>>> from cache_fields.models import *
+>>> package = Package.objects.get()
+>>> package
+<Package: 1: Created>
+>>> package.status_id
+1
+>>> package.status_id = 2
+>>> package.status
+<Status: InPreparation>
+>>>
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet []>
+>>> package.save()
+>>> package.status
+<Status: InPreparation>
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet []>
+>>>
+```
 
 What? Why our status history is empty? Here is why: we are using `post_save`, so the database call for old value happens AFTER we write a new value to the database. We could have switched to pre-save signal (so that we read old value before we update database), however, we need to add extra handler: when the package is created for the first time, it has no id to pass to `PackageStatusHistory`:
 
@@ -107,7 +125,23 @@ def register_status_change(sender, instance: Package, **kwargs):
 
 Now, if we try this:
 
-![Try #2](output2.png)
+```python
+>>> from cache_fields.models import *
+>>> package = Package.objects.get()
+>>> package
+<Package: 1: Created>
+>>> package.status_id = 2
+>>> package.status
+<Status: InPreparation>
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet []>
+>>> package.save()
+>>> package.status
+<Status: InPreparation>
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet [<PackageStatusHistory: 1: 1 -> 2>]>
+>>>
+```
 
 > Notice how we used `old_status_id = instance.id and Package.objects.get(id=instance.id).status_id`\
 > It is a nice shortcut for `if` statement: `and` statement executes second part (right-hand part) **ONLY IF** the first part is "`True`".\
@@ -146,10 +180,74 @@ def register_status_change(sender, instance: Package, **kwargs):
                                             to_status_id=instance.status_id)
 ```
 
-![Try #3](output3.png)
+Which results in:
+
+```python
+>>> from cache_fields.models import *
+>>> package = Package.objects.get()
+>>> package
+<Package: 1: InPreparation>
+>>> package.status_id
+2
+>>> package.cached_status_id
+2
+>>> package.status_id = 3
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet [<PackageStatusHistory: 1: 1 -> 2>]>
+>>> package.save()
+>>> package.status_id
+3
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet [<PackageStatusHistory: 1: 1 -> 2>, <PackageStatusHistory: 1: 2 -> 3>]>
+>>>
+```
 
 We prevented extra database calls, yay! We can extend this method saving the `dict` of the model as variable (by using `model_to_dict` function) and then we would have access to old value of every field! You can also extend this logic to mixin, as explained in this [StackOverflow answer](https://stackoverflow.com/a/15321187/8842262). However, I personally prefer this method, having a class variable for each cached field, which is a little hard to maintain, however, efficient.
 
 ## Solution 4: Third-Party Libraries
 
 There is also similar implementation with mixin as third party library: [Django Dirty Fields](https://github.com/romgar/django-dirtyfields). There is not much explaining to do, so let's just test it:
+
+The code:
+
+```python
+@receiver(post_save, sender=Package)
+def register_status_change(sender, instance: Package, **kwargs):
+    old_status_id = instance.get_dirty_fields(check_relationship=True).get("status", None)
+
+    if instance.status_id != old_status_id:
+        # There is a status change
+        PackageStatusHistory.objects.create(package_id=instance.id,
+                                            from_status_id=old_status_id,
+                                            to_status_id=instance.status_id)
+```
+
+The result:
+
+```python
+>>> from cache_fields.models import *
+>>> package = Package.objects.get()
+>>> package
+<Package: 1: Shipped>
+>>> package.status_id
+3
+>>> package.cached_status_id
+3
+>>> package.is_dirty(check_relationship=True)
+False
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet [<PackageStatusHistory: 1: 1 -> 2>, <PackageStatusHistory: 1: 2 -> 3>]>
+>>> package.status_id = 4
+>>> package.is_dirty(check_relationship=True)
+True
+>>> package.get_dirty_fields(check_relationship=True)
+{'status': 3}
+>>> package.save()
+>>> package.status_id
+4
+>>> PackageStatusHistory.objects.filter(package_id=package.id)
+<QuerySet [<PackageStatusHistory: 1: 1 -> 2>, <PackageStatusHistory: 1: 2 -> 3>, <PackageStatusHistory: 1: 3 -> 4>]>
+>>>
+```
+
+It works, nice! You can get access to the whole code from this [repository](https://github.com/Miradils-Blog/django). Feel free to add your ideas/suggestions!
