@@ -59,7 +59,7 @@ RRSRRLRR
 
 Let's first analyze how the input works. If we run the input sequence, we will have the following result:
 
-{{< img src="result1.png" align="center" title="Problem Input Result">}}
+{{< img src="result1.png" align="center" title="Problem Input Result 1">}}
 
 ### The wrong first idea
 
@@ -144,7 +144,7 @@ And if we submit this:
 
 {{< vs 2 >}}
 
-{{< img src="submission_result.png" align="center" title="Problem Input Result">}}
+{{< img src="submission_result.png" align="center" title="Submission Result">}}
 
 {{< vs 2 >}}
 

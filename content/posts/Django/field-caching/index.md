@@ -1,6 +1,6 @@
 ---
 title: "How to detect field changes in Django"
-date: 2023-08-11T14:30:00+01:00
+date: 2023-10-10T14:30:00+01:00
 description: "How to detect field changes in Django"
 hero: images/posts/django.png
 menu:
