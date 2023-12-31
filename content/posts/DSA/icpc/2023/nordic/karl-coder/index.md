@@ -1,7 +1,7 @@
 ---
 title: "Karl Coder"
 date: 2023-10-09T14:00:00+02:00
-description: "Solving task K from \"The 2023 Nordic Collegiate Programming Contest\""
+description: "Solving DSA Problems. \"The 2023 Nordic Collegiate Programming Contest\": Problem K"
 hero: images/posts/dsa/icpc2023nordic.png
 menu:
   sidebar:

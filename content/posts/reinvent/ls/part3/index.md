@@ -1,7 +1,7 @@
 ---
 title: "Getting the list of files and their info"
 date: 2023-05-10T10:00:00+02:00
-description: "Getting the list of files and their info"
+description: "Rewriting \"ls\" #3: Getting the list of files and their info"
 hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:

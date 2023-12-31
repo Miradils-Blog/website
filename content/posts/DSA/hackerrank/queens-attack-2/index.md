@@ -1,7 +1,7 @@
 ---
 title: "Queen's Attack II"
 date: 2023-11-02T12:00:00+01:00
-description: "Solving HackerRank Problem: Queen's Attack II"
+description: "Solving DSA Problems. HackerRank: Queen's Attack II"
 hero: images/posts/dsa/hackerrank.png
 menu:
   sidebar:

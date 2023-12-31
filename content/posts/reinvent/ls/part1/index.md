@@ -1,7 +1,7 @@
 ---
 title: "Command, file types and flags"
 date: 2023-04-28T19:00:00+02:00
-description: "Command, file types and flags"
+description: "Rewriting \"ls\" #1: Command, file types and flags"
 hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:

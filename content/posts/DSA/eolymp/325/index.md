@@ -1,7 +1,7 @@
 ---
 title: "325: Dangerous route"
 date: 2023-10-11T13:00:00+02:00
-description: "Solving Eolymp Problem 325: Dangerous route"
+description: "Solving DSA Problems. Eolymp 325: Dangerous route"
 hero: images/posts/dsa/eolymp.png
 menu:
   sidebar:

@@ -1,7 +1,7 @@
 ---
-title: "Sorting and formatting the output"
+title: "Sorting and formatting the output. The Finale."
 date: 2023-09-28T10:00:00+02:00
-description: "Sorting and formatting the output"
+description: "Rewriting \"ls\" #5: Sorting and formatting the output. The Finale."
 hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:

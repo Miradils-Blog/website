@@ -1,7 +1,7 @@
 ---
 title: "2: Add Two numbers"
 date: 2023-10-07T12:00:00+02:00
-description: "Solving LeetCode Problem 2: Add Two numbers"
+description: "Solving DSA Problems. LeetCode 2: Add Two numbers"
 hero: images/posts/dsa/leetcode.png
 menu:
   sidebar:

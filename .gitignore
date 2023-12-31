@@ -133,3 +133,4 @@ dist
 resources/
 .vscode/
 public/
+.DS_Store

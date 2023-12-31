@@ -1,7 +1,7 @@
 ---
 title: "Processing flags"
 date: 2023-05-23T20:00:00+02:00
-description: "Processing flags"
+description: "Rewriting \"ls\" #4: Processing flags"
 hero: images/posts/reinvent/ls.jpg
 menu:
   sidebar:

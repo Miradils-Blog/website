@@ -1,7 +1,7 @@
 ---
 title: "How I got offer, interviewed and received a job all in 2 hours"
 date: 2023-10-15T15:30:00+02:00
-description: "How I started my journey"
+description: "How I started switched from embedded to web development"
 menu:
   sidebar:
     name: "How did switch to Web Development?"
