@@ -14,6 +14,7 @@ categories: ["webdevelpment", "interviewstories"]
 
 aliases:
   - how-i-switched-to-web-dev
+  - how-i-got-a-job-in-2-hours
 ---
 
 ## Giriş

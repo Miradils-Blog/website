@@ -4,7 +4,7 @@ date: 2023-10-15T15:30:00+02:00
 description: "How I started switched from embedded to web development"
 menu:
   sidebar:
-    name: "How did switch to Web Development?"
+    name: "How I got job in two hours"
     identifier: how-did-i-switch-to-web-dev
     parent: misc
     weight: 20
@@ -14,6 +14,7 @@ categories: ["HowTo", "DSA", "Roadmap"]
 
 aliases:
   - how-i-switched-to-web-dev
+  - how-i-got-a-job-in-2-hours
 ---
 
-Available only in Azerbaijani for now. Feel free to contribute by translating the article!
+Available only in Azerbaijani language for now. Feel free to contribute by translating the article!
