@@ -21,7 +21,7 @@ series:
 
 ## The easy way
 
-Actually, C provides a function to run any OS command, and print its output: [system](https://www.tutorialspoint.com/c_standard_library/c_function_system.htm). From the example in the reference, we see that, we can just take arguments from shell and pass it to that function, and it is done.
+Actually, C provides a function to run any OS command, and print its output: [system](https://www.tutorialspoint.com/c_standard_library/c_function_system.htm). From the example in the reference, we see that, we can just take arguments from shell and pass it to that function, and it is done. The following code is just a showcase, and is far from optimized:
 
 ```c
 #include <stdio.h>
