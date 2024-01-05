@@ -203,7 +203,7 @@ int main()
 
 AND THE EXPECTED RESULT IS:
 
-![Submission Result 2](submission_result1.png)
+![Submission Result 2](submission_result2.png)
 
 What, the same?? Hold on a minute. What is the problem then?
 
