@@ -9,6 +9,7 @@
 <meta data-rh="true" property="og:description"
     content="{{ if .Description }}{{ if .Params.series }}{{ .Parent.Title }}: {{ end }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
 <meta data-rh="true" property="og:image" content="{{ partial "helpers/get-hero.html" . }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
 
 {{ end }}
 

@@ -35,7 +35,7 @@ There are 8 main types of files in Linux:
 3. Directory files: Practically folders. They store the location of other files. Color code: **Blue**
 4. Block or Character special files: Hardware devices (hard, CD/DVD drives) are stored in Linux as special files. Color code: **Yellow + Black background**
 5. Link Files: Files pointing to other files. Basically, shortcuts. Color code: **Cyan/Sky Blue** (**Red + Black Background** if link is broken)
-6. Socket files: Communication endpoint for applications. Two application can share data via socket files with each other. Color code: **Magenta**
+6. Socket files: Communication endpoint for applications. Two applications can share data via socket files with each other. Color code: **Magenta**
 7. Named pipe files: Also used for communication between applications. Difference is that socket communication is bidirectional, unlike pipe files. Also, pipes can be created between related processes (for ex. parent and child processes), however, there is no limitation for sockets. Color code: **Light Yellow + Black Background**
 8. Archive files: Basically compressed/archived files. Color code: **Red**
 
@@ -72,4 +72,4 @@ Now that we know which file types we have, let's dig into command `ls` more. Acc
 
 ## What is the plan?
 
-We will rewrite `ls` command and its above mentioned flags step-by-step, in C. We will deep-dive into Linux filesystem, permissions, users/groups etc. Moreover, we will use Test Driven Development and modular programming to ensure we write the most optimal code. To be honest, I am thrilled with this project and I hope you are too!
+We will rewrite `ls` command and its above-mentioned flags step-by-step, in C. We will deep-dive into Linux filesystem, permissions, users/groups etc. Moreover, we will use Test Driven Development and modular programming to ensure we write the most optimal code. To be honest, I am thrilled with this project, and I hope you are too!

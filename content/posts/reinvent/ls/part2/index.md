@@ -170,7 +170,7 @@ void test_ls_flags(void)
 
 Our code will loop through given flags and assert output of each flag. Our `ls.c` file is still the same, containing code to list with `system` command. That works for now, we just need to run basic test. So, output of the following is:
 
-![Output of make runtest](make3.png)
+![Output of updated make runtest](make3.png)
 
 ## Conclusion
 

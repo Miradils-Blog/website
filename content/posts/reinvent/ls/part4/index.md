@@ -526,6 +526,6 @@ We are checking different flags, which must or must not override each other depe
 
 ## Conclusion
 
-That's it! We processed all needed flags and stored them, and all tests pass. In the next chapter, we will use these flags and we will print data in correct format and order.
+That's it! We processed all needed flags and stored them, and all tests passes. In the next chapter, we will use these flags and we will print data in correct format and order.
 
 You can get codes from this [repository](https://github.com/Miradils-Blog/linux-ls).
