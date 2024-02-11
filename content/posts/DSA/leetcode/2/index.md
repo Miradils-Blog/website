@@ -12,6 +12,9 @@ menu:
 
 tags: ["DSA", "Leetcode", "Medium"]
 categories: ["DSA"]
+
+aliases:
+    2-add-two-numbers
 ---
 
 
