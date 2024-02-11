@@ -55,11 +55,11 @@ int lengthOfLastWord(char* s) {}
 
 ## [Solution](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/leetcode/58-length-of-last-word)
 
-One would think that, this is an easy task, where you get the whole string, parse it and get the length of last word. It is correct, however, considering we are solving in C, there is even better way to do it. However, we are going to do in both aprroaches. Even though it does not really matter in this case, considering input is read and parsed before passing it to the given function, we will explore both options.
+One would think that this is an easy task, where you get the whole string, parse it, and get the length of the last word. It is correct, however, considering we are solving in C, there is a better way to do it. However, we are going to do both approaches. Even though it does not really matter in this case, considering input is read and parsed before passing it to the given function, we will explore both options.
 
 ### Approach 1: Parse string with `strtok`
 
-So, that's what comes to the mind first: parse by space, and get the last word and its length! So, let's do that. Remember that, parsing function in C is `strtok`:
+So, that's what comes to the mind first: parse by space, and get the last word and its length! So, let's do that. Remember that, the parsing function in C is `strtok`:
 
 ```C
 int lengthOfLastWord(char* s)
@@ -85,7 +85,7 @@ Okay, submission is accepted, but stats can be better. Let's try another approac
 
 ### Approach 2: Parse string with `sscanf`
 
-With `sscanf` one would ask? You see, `scanf` and relative functions gets string values quite different by nature: it scans the string to the value TILL WHITESPACE. So, we can use it to get words by whole.
+With `sscanf` one would ask? You see, `scanf` and relative functions get string values quite different by nature: it scans the string to the value TILL WHITESPACE. So, we can use it to get words by whole.
 
 ```C
 int lengthOfLastWord(char* s)
@@ -103,18 +103,18 @@ int lengthOfLastWord(char* s)
 So, what did we do:
 
 1. Used `%n` to get the number of scanned characters
-2. Move pointer to the next word after each scan.
-3. Continue till the EOF, and return length of last scanned string.
+2. Move the pointer to the next word after each scan.
+3. Continue till the EOF, and return the length of the last scanned string.
 
-Simple, as that! So, if LeetCode allowed us, we could have done this without even storing the string, parsing right from `stdin`. This would have increase both memory and runtime of the program. If we submit this solution:
+Simple, as that! So, if LeetCode allowed us, we could have done this without even storing the string, parsing right from `stdin`. This would have increased both the memory and runtime of the program. If we submit this solution:
 
 ![Submission with sscanf](submission2.png)
 
-We got the best time in runtime! That\s perfect, however, we still use kind of much memory (mostly because of `word[10000]`). So, what if we drop all tools and try hardcore loop search?
+We got the best time in runtime! That's perfect, however, we still kind of use a lot of memory (mostly because of `word[10000]`). So, what if we drop all tools and try a hardcore loop search?
 
 #### Approach 3: Loop search
 
-Of course, we can do everything old-fashioned way:
+Of course, we can do everything the old-fashioned way:
 
 ```C
 int lengthOfLastWord(char* s)
@@ -123,7 +123,7 @@ int lengthOfLastWord(char* s)
     int i = strlen(s) - 1;
 
     // we can check this without checking `i`
-    // because, there is always at least one word
+    // because there is always at least one word
     while (s[i] == ' ')
         --i;
 
@@ -140,4 +140,4 @@ And if we submit:
 
 Accepted with the best time, and better memory usage! Yay!
 
-You can access the code [here](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/leetcode/58-length-of-last-word). Feel free to contribute your solution in different language!
+You can access the code [here](https://github.com/Miradils-Blog/dsa-problems-and-solutions/tree/main/leetcode/58-length-of-last-word). Feel free to contribute your solution in a different language!
