@@ -3,6 +3,7 @@ title: "58: Length of Last Word"
 date: 2024-02-11T14:20:00+01:00
 description: "Solving DSA Problems. LeetCode 58: Length of Last Word"
 hero: images/posts/dsa/leetcode.png
+math: true 
 menu:
   sidebar:
     name: "58: Length of Last Word"
