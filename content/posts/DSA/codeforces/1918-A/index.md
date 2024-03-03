@@ -1,6 +1,6 @@
 ---
 title: "Contest 1918, Problem A"
-date: 2024-02-26T10:00:00+01:00
+date: 2024-02-26T11:00:00+01:00
 description: "Solving DSA Problems. CodeForces 1918-A: Brick Wall"
 hero: images/posts/dsa/codeforces.png
 menu:
@@ -8,7 +8,7 @@ menu:
     name: "1918-A: Brick Wall"
     identifier: codeforces-1918-a-brick-wall
     parent: codeforces
-    weight: 1
+    weight: 1918
 
 tags: ["DSA", "Codeforces"]
 categories: ["DSA"]
