@@ -90,7 +90,7 @@ int main(void) {
 }
 ```
 
-The problem is that, this method works with given solution (output is indeed 6), but if in some substring, number of Ls are more than number of Rs (let's say, our input is as RRRRLLLLRR), then the solution fails:
+The problem is that this method works with given solution (output is indeed 6), but if in some substring, number of Ls are more than number of Rs (let's say, our input is as RRRRLLLLRR), then the solution fails:
 
 ![Wrong solution](false_output.png)
 
@@ -100,7 +100,7 @@ Instead, we have to tackle problem differently: as it is 1x1 dimension, we can s
 
 {{< vs 1 >}}
 
-Because of the given dimension, we know that, the every cell between those borders are painted, even if the robot is in the middle of the range. Whenever, the robot goes beyond these ranges, it pushes the ranges as well. So, if we implement it to the code and also remove char array, by reading character by character, reducing memory usage:
+Because of the given dimension, we know that every cell between those borders is painted, even if the robot is in the middle of the range. Whenever, the robot goes beyond these ranges, it pushes the ranges as well. So, if we implement it to the code and also remove char array, by reading character by character, reducing memory usage:
 
 ```C
 #include <stdio.h>

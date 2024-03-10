@@ -10,7 +10,7 @@ menu:
     parent: leetcode
     weight: 2
 
-tags: ["DSA", "Leetcode", "Medium"]
+tags: ["DSA", "Leetcode", "Medium", "LinkedList"]
 categories: ["DSA"]
 
 aliases:
@@ -103,7 +103,7 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
 }
 ```
 
-So what we do: we create a head which will be returned, and a tail which will move and create node for each calculated digit. Considering that the digit count of `l1` and `l2` might not be the same (one can be 5-digit, other 2), we need to check both of them. We also need to check the carry, even if we have used all digits of `l1` and `l2`, because, it also creates a next digit (example: 101 + 899 = 1000). At each step, we add digits and calculate carry, each time we store the result in `next` node and pushing tail to that node:
+So, what we do: we create a head which will be returned, and a tail which will move and create node for each calculated digit. Considering that the digit count of `l1` and `l2` might not be the same (one can be 5-digit, other 2), we need to check both of them. We also need to check the carry, even if we have used all digits of `l1` and `l2`, because it also creates a next digit (example: 101 + 899 = 1000). At each step, we add digits and calculate carry, each time we store the result in `next` node and pushing tail to that node:
 
 ![Output Explained](output_explained.png)
 
