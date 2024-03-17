@@ -45,19 +45,19 @@ One integer - the danger of the most safe route.
 
 ##### Input example #1
 
-3 2\
-1 2 1\
+3 2</br>
+1 2 1</br>
 2 3 1
 
 ##### Input example #2
 
-6 7\
-1 2 1\
-2 3 2\
-3 4 3\
-4 6 5\
-2 6 10\
-2 5 7\
+6 7</br>
+1 2 1</br>
+2 3 2</br>
+3 4 3</br>
+4 6 5</br>
+2 6 10</br>
+2 5 7</br>
 5 6 1
 
 ---

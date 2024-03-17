@@ -67,7 +67,7 @@ Create the Binary Search Tree from input data. Print the vertices of a tree acco
 
 ##### Input example #1
 
-6\
+6</br>
 14 9 1 14 20 13
 
 ---
