@@ -1,21 +1,30 @@
 <div class="post-card">
-    <a href="{{ .RelPermalink | relLangURL }}" class="post-card-link">
-        <div class="card">
-            <div class="card-head">
+    <div class="card">
+        <div class="card-head">
+            <a href="{{ .RelPermalink | relLangURL }}" class="post-card-link">
                 <img class="card-img-top" src='{{ partial "helpers/get-hero.html" . }}' alt="Hero Image">
-            </div>
-            <div class="card-body">
+            </a>
+        </div>
+        <div class="card-body">
+            <a href="{{ .RelPermalink | relLangURL }}" class="post-card-link">
                 {{ if .Params.series }}
                 <h5 class="card-title">{{ .Parent.Title }}: {{ .Title }}</h5>
                 {{ else }}
                 <h5 class="card-title"> {{ .Title }} </h5>
                 {{ end }}
-                <p class="card-text post-summary">{{ .Summary }}</p>
-            </div>
-            <div class="card-footer">
-                <span class="float-left">{{ .Date.Format "January 2, 2006" }}</span>
-                <a href="{{ .RelPermalink | relLangURL }}" class="float-right btn btn-outline-info btn-sm">{{ i18n "read" }}</a>
-            </div>
+                <p class="card-text post-summary">{{ .Summary | plainify }}</p>
+            </a>
+            {{ if and site.Params.features.tags.enable site.Params.features.tags.on_card }}
+            {{ partial "misc/tags.html" .Params.tags }}
+            {{ end }}
         </div>
-    </a>
+        <div class="card-footer">
+            <span class="float-start">
+                {{ .Date | time.Format ":date_full" }}
+                {{ if site.Params.features.readingTime }} | {{.ReadingTime}} {{ i18n "minute" .ReadingTime }} {{ end
+                }}</span>
+            <a href="{{ .RelPermalink | relLangURL }}" class="float-end btn btn-outline-info btn-sm">{{ i18n "read"
+                }}</a>
+        </div>
+    </div>
 </div>

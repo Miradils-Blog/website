@@ -1,5 +1,5 @@
 ---
-title: "87: Robot"
+title: "Eolymp 87: Robot"
 date: 2023-10-06T12:00:00+02:00
 description: "Solving DSA Problems. Eolymp 87: Robot"
 hero: images/posts/dsa/eolymp.png

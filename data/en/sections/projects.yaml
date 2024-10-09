@@ -24,7 +24,7 @@ projects:
   - name: 5-stage RISC-V processor
     logo: /images/sections/projects/riscv.png
     role: Contributor
-    timeline: "Mar 2023 - Present"
+    timeline: "Mar 2023 - Jun 2023"
     repo: https://github.com/mmzeynalli/RISC-V
     summary: A simple 32-bit 5-stage RISC-V processor in SystemVerilog based on the book Computer Organization and Design by Patterson & Hennesy.
     tags: ["academic", "riscv", "systemverilog"]

@@ -1,5 +1,5 @@
 ---
-title: "Queen's Attack II"
+title: "Hackerrank: Queen's Attack II"
 date: 2023-11-02T12:00:00+01:00
 description: "Solving DSA Problems. HackerRank: Queen's Attack II"
 hero: images/posts/dsa/hackerrank.png

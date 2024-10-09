@@ -2,12 +2,11 @@ baseURL: https://mmzeynalli.dev
 
 languageCode: en-us
 title: "Miradil's Blog"
-theme: "toha"
 
 # Use Hugo modules to add theme
 module:
   imports:
-    - path: toha
+  - path: github.com/hugo-toha/toha/v4
   mounts:
     - source: static/files
       target: static/files
@@ -77,18 +76,13 @@ params:
 
   # Configure various features of this theme
   features:
-    # Enable dark theme
-    darkMode:
+    # Enable   theme
+    theme:
       enable: true
       services:
-        darkreader:
-          defaultColorScheme: dark # options are 'system', 'dark', 'light'
-          fixes:
-            invert: ['img[src$=".svg"]'] # inverts svg colors.
-          theme:
-            brightness: 100
-            contrast: 100
-            sepia: 0
+        light: true # enable light theme. default "true"
+        dark: true # enable dark theme. default "true"
+        default: system # can be either light, dark or system. default "system"
 
     # Enable and configure portfolio
     portfolio:
@@ -112,7 +106,7 @@ params:
 
     # Enable & configure "Notes" features
     notes:
-      enable: true
+      enable: false
 
     # Enable comment feature. There, should be only one of them.
     comment:
@@ -236,8 +230,13 @@ params:
           # options doc: https://github.com/sampotts/plyr#options
           # fullscreen: true
 
-    readingTime:
+    # Enables copy code button
+    copyCodeButton:
       enable: true
+
+    # Enable reading time support in post cards and in post pages
+    readingTime:
+      enable: True
 
   # Provide footer configuration.
   footer:

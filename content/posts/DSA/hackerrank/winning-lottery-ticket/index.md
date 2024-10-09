@@ -1,5 +1,5 @@
 ---
-title: "Winning Lottery Ticket"
+title: "Hackerrank: Winning Lottery Ticket"
 date: 2024-03-11T10:00:00+01:00
 description: "Solving DSA Problems. HackerRank: Winning Lottery Ticket"
 hero: images/posts/dsa/hackerrank.png

@@ -1,5 +1,5 @@
 ---
-title: "Balanced Brackets"
+title: "Hackerrank: Balanced Brackets"
 date: 2024-02-18T12:30:00+01:00
 description: "Solving DSA Problems. HackerRank: Balanced Brackets"
 hero: images/posts/dsa/hackerrank.png

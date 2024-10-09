@@ -1,5 +1,5 @@
 ---
-title: "142: Linked List Cycle II"
+title: "Leetcode 142: Linked List Cycle II"
 date: 2024-03-04T11:00:00+01:00
 description: "Solving DSA Problems. LeetCode 142: Linked List Cycle II"
 hero: images/posts/dsa/leetcode.png

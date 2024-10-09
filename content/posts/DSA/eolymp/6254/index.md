@@ -1,5 +1,5 @@
 ---
-title: "6254: Timebomb"
+title: "Eolymp 6254: Timebomb"
 date: 2024-03-18T11:00:00+01:00
 description: "Solving DSA Problems. Eolymp 6254: Timebomb"
 hero: images/posts/dsa/eolymp.png

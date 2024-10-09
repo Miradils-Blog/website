@@ -20,7 +20,7 @@ experiences:
       - designation: Platform Security Engineer
         start: Mar 2023
         # don't provide end date if you are currently working there. It will be replaced by "Present"
-        # end: Dec 2020
+        end: May 2024
         # give some points about what was your responsibilities at the company.
         responsibilities:
           - Getting into kernel level functions and handling memory access.
