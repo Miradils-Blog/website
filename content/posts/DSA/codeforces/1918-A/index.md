@@ -1,5 +1,5 @@
 ---
-title: "Contest 1918, Problem A"
+title: "Codeforces: Contest 1918, Problem A"
 date: 2024-02-26T11:00:00+01:00
 description: "Solving DSA Problems. CodeForces 1918-A: Brick Wall"
 hero: images/posts/dsa/codeforces.png
