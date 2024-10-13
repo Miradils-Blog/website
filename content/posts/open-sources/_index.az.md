@@ -6,5 +6,4 @@ menu:
     identifier: open-sources
     weight: 100
 
-draft: true
 ---

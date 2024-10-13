@@ -12,7 +12,6 @@ menu:
 tags: ["Programming", "Open Source"]
 categories: ["webdevelpment", "interviewstories"]
 
-draft: true
 ---
 
 Available only in Azerbaijani language for now. Feel free to contribute by translating the article!

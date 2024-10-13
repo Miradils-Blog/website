@@ -1,6 +1,6 @@
 ---
 title: Integrify
-date: 2024-10-13T16:00:00+02:00
+date: 2024-10-14T10:00:00+02:00
 description: "İlk açıq-qaynaqlı proyektim: Integrify"
 menu:
   sidebar:
@@ -10,9 +10,8 @@ menu:
     weight: 10
 
 tags: ["Programming", "Open Source"]
-categories: ["webdevelpment", "interviewstories"]
+categories: ["open-source", "story"]
 
-draft: true
 ---
 
 ## Giriş
@@ -47,3 +46,8 @@ Birinci iş dokumentasiyanı harada host edəcəyimizi seçmək idi. [SQLAdmin](
 Proyektin ilk versiyasını çıxarmaq üzrə olarkən başqa developerlərin ödəniş sistemləri ilə problem çəkdiklərini gördüm. Onlarla bildiklərimi paylaşdım və belə bir kitabxana üzərində işlədiyimi bildirdim. Proyekt gözlədiyimdən daha yaxşı başladı: elə ilk həftədə 500-ə yaxın yüklənmə müşahidə olundu.
 
 İlk versiyamızından sonra [Şəhriyar](https://www.linkedin.com/in/shahriyar-rzayev) proyektə yeni issue və PR-lər əlavə edərək dəstək olmağa başladı. Növbəti versiyalarda onun qeyd etdiyi (və özümüzün tapdığımız) problemləri düzəltdik. Amma kod strukturunda Şəhriyarla razılığa gələmmədik (bu postun yazılma tarixində, [müzakirə](https://github.com/mmzeynalli/integrify/pull/8) hələ də davam edir).
+
+## Linklər
+
+- [Dokumentasiya](https://integrify.mmzeynalli.dev)
+- [Kod](https://github.com/mmzeynalli/integrify)
