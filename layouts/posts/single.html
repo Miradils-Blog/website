@@ -67,11 +67,10 @@
                 {{ end }}
 
                 {{ if .Params.series }}
-                <h1>{{ .Parent.Title }}: {{.Page.Title}}</h1>
+                <h1 style="text-align: center;">{{ .Parent.Title }}: {{.Page.Title}}</h1>
                 {{ else }}
-                <h1>{{.Page.Title}}</h1>
+                <h1 style="text-align: center;">{{.Page.Title}}</h1>
                 {{ end }}
-
 
                 {{ if not (site.Params.features.blog.showAuthor | default true) }}
                 <div class="author-profile ms-auto align-self-lg-center">
