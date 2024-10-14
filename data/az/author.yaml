@@ -2,7 +2,7 @@
 name: "Miradil Zeynalli"
 nickname: "Miradil"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Hi, I am"
+greeting: "Salamlar, mən"
 image: "images/author/profile.jpg"
 # give your some contact information. they will be used in the footer
 contactInfo:
@@ -24,7 +24,7 @@ contactInfo:
 
 # some summary about what you do
 summary:
-  - I am a Software Developer with rubber duck for debugging purposes
-  - I am an Engineer
-  - I love C
-  - I love to challenge myself
+  - Mən bir köhnə mühəndisəm
+  - İsveç deyilən yerdən gəlmişəm
+  - C dilini ən çox sevmişəm
+  - Embedded-i özümə sahə seçmişəm

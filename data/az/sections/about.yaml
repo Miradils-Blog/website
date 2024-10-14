@@ -1,6 +1,6 @@
 # section information
 section:
-  name: About
+  name: Haqqında
   id: about
   enable: true
   weight: 1

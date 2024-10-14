@@ -1,6 +1,6 @@
 # section information
 section:
-  name: Recent Posts
+  name: Son postlar
   id: recent-posts
   enable: true
   weight: 7

@@ -39,7 +39,7 @@ Sonra isə struktur seçməli idik. Uzun araşdırmalardan sonra, [Adyen](https:
 
 ### Dokumentasiya
 
-Birinci iş dokumentasiyanı harada host edəcəyimizi seçmək idi. [SQLAdmin](https://aminalaee.dev/sqladmin/)-dən ilhamlanaraq öz şəxsi bloqumun subdomain-ində host etdik. Dokumentasiyanın dizaynı üçün iki ən məhşur seçim var idi: `readthedocs` və `mkdocs`. Birinci seçim klassik olsa da, ikinci seçim daha müasir və gözoxşayan olduğundan onunla davam etdik. Üstəlik `FastAPI`, `pydantic` və başqa kitabxanalar da bu statik sayt generatorlarından istifadə edir. Bununla da ilk versiyamızı PyPI-da paylaşdıq.
+Birinci iş dokumentasiyanı harada host edəcəyimizi seçmək idi. [SQLAdmin](https://aminalaee.dev/sqladmin/)-dən ilhamlanaraq öz şəxsi bloqumun subdomain-ində host etdik. Dokumentasiyanın dizaynı üçün iki ən məhşur seçim var idi: `readthedocs` və `mkdocs`. Birinci seçim klassik olsa da, ikinci seçim daha müasir və gözoxşayan olduğundan onunla davam etdik. Üstəlik `FastAPI`, `Pydantic` və başqa kitabxanalar da bu statik sayt generatorlarından istifadə edir. Bununla da ilk versiyamızı PyPI-da paylaşdıq.
 
 ## İlk versiya və maraq
 
