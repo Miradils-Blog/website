@@ -11,6 +11,19 @@ section:
 # Your experiences
 experiences:
   - company:
+      name: Axis Communications AB
+      url: "https://www.axis.com"
+      location: Lund, Sweden
+      # company overview
+      overview: Axis Communications is specialized in network cameras, especially for security.
+    positions:
+      - designation: New Business, Embedded Firmware Engineer
+        start: Oct 2024
+        responsibilities:
+          - Increasing power save efficiency when devices are in idle mode by ~25%
+          - Handling different cases for different chipsets
+
+  - company:
       name: Axis Communications
       url: "https://www.axis.com"
       location: Lund, Sweden
