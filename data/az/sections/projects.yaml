@@ -16,11 +16,26 @@ buttons:
     filter: "professional"
   - name: Academic
     filter: "academic"
-  - name: Hobby
-    filter: "hobby"
+  - name: Open Source
+    filter: "open-source"
 
 # your projects
 projects:
+  - name: Integrify
+    logo: /images/sections/projects/integrify.svg
+    role: Main contributor
+    timeline: "Sep 2024 - Present"
+    repo: https://github.com/mmzeynalli/integrify/
+    summary: An open-source client to ease API integrations
+    tags: ["open-source", "python", "api"]
+
+  - name: chess-rating-chart
+    role: Main contributor
+    timeline: "Oct 2024"
+    repo: https://github.com/mmzeynalli/chess-rating-chart
+    summary: Put chesscom/lichess rating progress to your README file
+    tags: ["open-source", "python", "lichess", "chesscom"]
+
   - name: 5-stage RISC-V processor
     logo: /images/sections/projects/riscv.png
     role: Contributor
@@ -53,13 +68,5 @@ projects:
     summary:
       A device to detect air quality index by 14 factors (noise, dust, co2 level etc.)
       for Baku Transportation Agency
-    tags:
-      ["professional", "hpma115s0", "qmc5883l", "dht22", "stm32", "air-quality"]
+    tags: ["professional", "hpma115s0", "qmc5883l", "dht22", "stm32", "air-quality"]
 
-  - name: Optioptiboot
-    repo: https://github.com/mmzeynalli/optioptiboot
-    role: Owner
-    timeline: "Oct 2020 - Halted"
-    summary: Optimized version of optiboot, to suppport external flashing,
-      enabling OTA update for any communication mean.
-    tags: ["hobby", "atmega", "bootloader"]

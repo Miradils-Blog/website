@@ -11,10 +11,10 @@ contactInfo:
     icon: telegram
     url: "https://telegram.me/mmzeynalli"
     text: "@mmzeynalli"
-  medium: 
+  medium:
     icon: medium
     url: https://medium.com/@mmzeynalli
-    text: "@mmzeynalli" 
+    text: "@mmzeynalli"
   linkedin: miradil-zeynalli
   github: mmzeynalli
   stack-overflow:
@@ -24,7 +24,6 @@ contactInfo:
 
 # some summary about what you do
 summary:
-  - I am a Software Developer with rubber duck for debugging purposes
-  - I am an Engineer
-  - I love C
-  - I love to challenge myself
+  - I am a Software Developer with rubber duck for debugging
+  - I am an engineer
+  - I love C language

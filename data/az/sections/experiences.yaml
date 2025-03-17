@@ -11,17 +11,28 @@ section:
 # Your experiences
 experiences:
   - company:
-      name: Axis Communications
+      name: Axis Communications AB
       url: "https://www.axis.com"
       location: Lund, Sweden
       # company overview
       overview: Axis Communications is specialized in network cameras, especially for security.
     positions:
-      - designation: Platform Security Engineer
+      - designation: New Business, Embedded Firmware Engineer
+        start: Oct 2024
+        responsibilities:
+          - Increasing power save efficiency when devices are in idle mode by ~25%
+          - Handling different cases for different chipsets
+
+  - company:
+      name: Axis Communications AB
+      url: "https://www.axis.com"
+      location: Lund, Sweden
+      # company overview
+      overview: Axis Communications is specialized in network cameras, especially for security.
+    positions:
+      - designation: R&D, SoC Platform Security Engineer
         start: Mar 2023
-        # don't provide end date if you are currently working there. It will be replaced by "Present"
         end: May 2024
-        # give some points about what was your responsibilities at the company.
         responsibilities:
           - Getting into kernel level functions and handling memory access.
           - Writing unit tests for newly added functionalities.

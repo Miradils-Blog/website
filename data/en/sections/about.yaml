@@ -8,7 +8,7 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Platform Security Engineer
+designation: Embedded Firmware Engineer
 # your company information
 company:
   name: Axis Communications
