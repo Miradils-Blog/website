@@ -25,7 +25,7 @@ projects:
     logo: /images/sections/projects/integrify.svg
     role: Main contributor
     timeline: "Sep 2024 - Present"
-    repo: https://github.com/mmzeynalli/integrify/
+    repo: https://github.com/Integrify-SDK/integrify-core-python
     summary: An open-source client to ease API integrations
     tags: ["open-source", "python", "api"]
 

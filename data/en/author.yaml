@@ -27,3 +27,17 @@ summary:
   - I am a Software Developer with rubber duck for debugging
   - I am an engineer
   - I love C language
+
+socialLinks:
+  - name: Email
+    icon: "fas fa-envelope"
+    url: "miradil.zeynalli@gmail.com"
+  - name: LinkedIn
+    icon: "fab fa-linkedin"
+    url: "https://www.linkedin.com/in/miradil-zeynalli/"
+  - name: Github
+    icon: "fab fa-github"
+    url: "https://www.github.com/mmzeynalli"
+  - name: StackOverflow
+    icon: "fab fa-stack-overflow"
+    url: "https://stackoverflow.com/users/8842262/miradil-zeynalli"

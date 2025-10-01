@@ -11,10 +11,10 @@ contactInfo:
     icon: telegram
     url: "https://telegram.me/mmzeynalli"
     text: "@mmzeynalli"
-  medium: 
+  medium:
     icon: medium
     url: https://medium.com/@mmzeynalli
-    text: "@mmzeynalli" 
+    text: "@mmzeynalli"
   linkedin: miradil-zeynalli
   github: mmzeynalli
   stack-overflow:
@@ -28,3 +28,17 @@ summary:
   - İsveç deyilən yerdən gəlmişəm
   - C dilini ən çox sevmişəm
   - Embedded-i özümə sahə seçmişəm
+
+socialLinks:
+  - name: Email
+    icon: "fas fa-envelope"
+    url: "miradil.zeynalli@gmail.com"
+  - name: LinkedIn
+    icon: "fab fa-linkedin"
+    url: "https://www.linkedin.com/in/miradil-zeynalli/"
+  - name: Github
+    icon: "fab fa-github"
+    url: "https://www.github.com/mmzeynalli"
+  - name: StackOverflow
+    icon: "fab fa-stack-overflow"
+    url: "https://stackoverflow.com/users/8842262/miradil-zeynalli"

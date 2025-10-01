@@ -13,6 +13,8 @@ buttons:
     filter: "all"
   - name: "Data Analysis"
     filter: "data-analysis"
+  - name: "Embedded"
+    filter: "embedded"
 
 # your publications
 publications:
@@ -20,7 +22,7 @@ publications:
     publishedIn:
       name: 2020 IEEE 14th International Conference on Application of Information and Communication Technologies (AICT)
       date: 9 Mar 2021
-      url: https://ieeexplore.ieee.org/xpl/conhome/9368512/proceeding
+      url: https://ieeexplore.ieee.org/
     authors:
       - name: Miradil Zeynalli
         url: "https://ieeexplore.ieee.org/author/37088803056"
@@ -50,3 +52,20 @@ publications:
         "MongoDB",
         "British Petroleum",
       ]
+
+  - title: Embedded Solutions for Flexible and Low Latency Power Control Unit
+    publishedIn:
+      name: LUP Student Papers
+      date: 6 Sep 2025
+      url: https://lup.lub.lu.se/
+    authors:
+      - name: Miradil Zeynalli
+        url: https://lup.lub.lu.se/student-papers/search/publication?q=author+exact+9186544
+      - name: Jasmin Sheikh Ali
+        url: https://lup.lub.lu.se/student-papers/search/publication?q=author+exact+9186551
+    paper:
+      summary:
+        "The existing Power Supply Unit (PSU) at Axis Communication contains a fully discrete solution that lacks flexibility for future updates. This research aims to address critical challenges by exploring methods to enhance speed, reduce PCB area, and introduce flexibility to the existing hardware solution. The approach involves replacing hardware functionalities within the control unit with software-controlled microcontroller units (MCU), specifically STM32 chips."
+      url: https://ieeexplore.ieee.org/document/9368862
+    categories: ["embedded"]
+    tags: ["Embedded", "Electronics", "PID", "Microcontrollers", "STM32", "Power Supply Unit", "Control Unit"]
