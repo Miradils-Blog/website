@@ -51,7 +51,7 @@ Mən şansa çox inanıram. Bütün bunların baş verməyində şansımın çox
 
 Təcrübəsiz iş axtaran çox adam görmüşəm, iş tapdıqda ya deyir maaşı qane etmir, ya da ki başqa bəhanələr gətirir. İlk cəhdlərində uğurlu olmağa çalışırlar, halbuki bu biraz çətindir. Gərək çox bəxtli olasınız, amma buna da güvənmək əlbəttə olmaz, sizin kontrolunuzda deyil. Onun yerinə, əlinizə düşən, sizin inkişafınıza təkan verə biləcək şanslardan yararlanın və öz dəyərinizi artırın ki, növbəti şansda daha çox tələb edə biləsiniz. Mən Sumaksda 1 ilə yaxın pulsuz, ondan sonra da 1 il çox aşağı gəlirlə işləməyə başladım. Bu vecimə deyildi, çünki orada yüksək sürətlə inkişaf edib, təcrübə qazandım. Bütün bunların sayəsində Starexdə daha yüksək maaş istəyə bildim. Bu postu məhşur fraza ilə bitirirəm:
 
-{{< img src="quote_white.png" align="center" title="Quote">}}
+{{< img src="quote.az.png" align="center" title="Quote">}}
 
 ### Extra: Vertasium: Is Success Luck or Hard Work? (Uğur Bəxtdir ya Zəhmət?)
 

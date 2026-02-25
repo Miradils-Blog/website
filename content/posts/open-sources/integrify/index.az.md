@@ -45,9 +45,18 @@ Birinci iş dokumentasiyanı harada host edəcəyimizi seçmək idi. [SQLAdmin](
 
 Proyektin ilk versiyasını çıxarmaq üzrə olarkən başqa developerlərin ödəniş sistemləri ilə problem çəkdiklərini gördüm. Onlarla bildiklərimi paylaşdım və belə bir kitabxana üzərində işlədiyimi bildirdim. Proyekt gözlədiyimdən daha yaxşı başladı: elə ilk həftədə 500-ə yaxın yüklənmə müşahidə olundu.
 
-İlk versiyamızından sonra [Şəhriyar](https://www.linkedin.com/in/shahriyar-rzayev) proyektə yeni issue və PR-lər əlavə edərək dəstək olmağa başladı. Növbəti versiyalarda onun qeyd etdiyi (və özümüzün tapdığımız) problemləri düzəltdik. Amma kod strukturunda Şəhriyarla razılığa gələmmədik (bu postun yazılma tarixində, [müzakirə](https://github.com/mmzeynalli/integrify/pull/8) hələ də davam edir).
+İlk versiyamızından sonra [Şəhriyar](https://www.linkedin.com/in/shahriyar-rzayev) proyektə yeni issue və PR-lər əlavə edərək dəstək olmağa başladı. Növbəti versiyalarda onun qeyd etdiyi (və özümüzün tapdığımız) problemləri düzəltdik. Amma kod strukturunda Şəhriyarla razılığa gələ bilmədik (bu postun yazılma tarixində, [müzakirə](https://github.com/mmzeynalli/integrify/pull/8) hələ də davam edir).
+
+Edit: Gəldik.
+
+## Yeni struktur
+
+Bir müddət proyekti işlədikdən sonra fərqinə vardım ki, bir neçə inteqrasiyanı bir repoda işləmək çox da effektiv deyil. Bir inteqrasiyaya update gəldikdə bütün kitabxana versiyası yüksəlir, birində problem olanda heç biri işləmir və ən əsası bəzi inteqrasiyalar əlavə kitabxanalar tələb edir (məs.: AzeriCard `rsa` kitabxanasından asılıdır) ki, başqa kitabxanalarda heç istifadə edilmir.
+
+Buna görə də, yeni struktura keçid etməyə qərar verdim: multi-repo və python namespace. Bunlardan istifadə etməklə hər inteqrasiyanı ayrı-ayrı repolarda saxlayıb, ayrı-ayrı idarə edə bildim. İdarəsi biraz çətin olsa da (bəzən eyni kodu/dokumentasiyanı 5-6 repoda dəyişmək lazım olur), effektivliyi daha öndədir.
 
 ## Linklər
 
 - [Dokumentasiya](https://integrify.mmzeynalli.dev)
-- [Kod](https://github.com/mmzeynalli/integrify)
+- [Kod, köhnə struktur](https://github.com/mmzeynalli/integrify)
+- [Kod, yeni struktur](https://github.com/orgs/Integrify-SDK/repositories)
